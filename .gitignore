@@ -1,0 +1,10 @@
+/vendor
+/node_modules
+Homestead.yaml
+Homestead.json
+.env
+/bootstrap/compiled.php
+.env.*.php
+.env.php
+.DS_Store
+Thumbs.db
