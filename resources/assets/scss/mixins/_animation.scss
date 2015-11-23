@@ -1,0 +1,227 @@
+// @MIXIN
+//
+// Returns cross browser styles for default animation
+// $prop: the property to be animated
+
+@mixin animate ($prop: all) {
+    -webkit-transition: $prop .4s linear;
+       -moz-transition: $prop .4s linear;
+         -o-transition: $prop .4s linear;
+            transition: $prop .4s linear;
+}
+
+
+// @MIXIN
+//
+// Returns cross browser styles for quick animation
+// $prop: the property to be animated
+
+@mixin animatequick ($prop: all) {
+    -webkit-transition: $prop .1s ease-in-out;
+       -moz-transition: $prop .1s ease-in-out;
+         -o-transition: $prop .1s ease-in-out;
+            transition: $prop .1s ease-in-out;
+}
+
+
+// @MIXIN
+//
+// Returns cross browser styles for bounce animation
+// $prop: the property to be animated
+
+@mixin animatebounce ($prop: all) {
+    -webkit-transition: $prop .4s cubic-bezier(0.420, 0.000, 0.500, 1.200);
+       -moz-transition: $prop .4s cubic-bezier(0.420, 0.000, 0.500, 1.200);
+         -o-transition: $prop .4s cubic-bezier(0.420, 0.000, 0.500, 1.200);
+            transition: $prop .4s cubic-bezier(0.420, 0.000, 0.500, 1.200);
+}
+
+
+// @MIXIN
+//
+// Returns cross browser styles for fadein animation
+// $time: the duration of the animation
+
+@mixin fadein ($time: 3s) {
+    -webkit-animation: fadein $time;
+       -moz-animation: fadein $time;
+         -o-animation: fadein $time;
+            animation: fadein $time;
+}
+
+
+// @MIXIN
+//
+// Returns cross browser styles for fadeout animation
+// $time: the duration of the animation
+
+@mixin fadeout ($time: 3s) {
+    -webkit-animation: fadeout $time;
+       -moz-animation: fadeout $time;
+         -o-animation: fadeout $time;
+            animation: fadeout $time;
+}
+
+
+// @MIXIN
+//
+// Returns cross browser styles for spin animation
+// $time: the duration of the animation
+
+@mixin spin ($time: 3s) {
+    -webkit-animation: spin $time infinite linear;
+       -moz-animation: spin $time infinite linear;
+         -o-animation: spin $time infinite linear;
+            animation: spin $time infinite linear;
+}
+
+
+// @MIXIN
+//
+// Returns cross browser styles for spin animation
+// $time: the duration of the animation
+
+@mixin pulsate ($time: 3s) {
+    -webkit-animation: pulse $time infinite linear;
+       -moz-animation: pulse $time infinite linear;
+         -o-animation: pulse $time infinite linear;
+            animation: pulse $time infinite linear;
+}
+
+
+// Keyframes for spin animations
+
+@keyframes "spin" {
+    from {
+        -webkit-transform: rotate(0deg);
+           -moz-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+             -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+           -moz-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+             -o-transform: rotate(360deg);
+                transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes spin {
+    from {
+        -moz-transform: rotate(0deg);
+             transform: rotate(0deg);
+    }
+
+    to {
+        -moz-transform: rotate(360deg);
+             transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes "spin" {
+    from {
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+    }
+}
+
+@-o-keyframes "spin" {
+    from {
+        -o-transform: rotate(0deg);
+           transform: rotate(0deg);
+    }
+
+    to {
+        -o-transform: rotate(360deg);
+           transform: rotate(360deg);
+    }
+}
+
+
+// Keyframes for pulse animations
+
+@keyframes pulse {
+    0% { -webkit-transform: scale(1); }
+    5% { -webkit-transform: scale(1.03); }
+    7% { -webkit-transform: scale(1); }
+    10% { -webkit-transform: scale(1.05); }
+    15% { -webkit-transform: scale(1); }
+    100% { -webkit-transform: scale(1); }
+}
+
+@-webkit-keyframes pulse {
+    0% { -webkit-transform: scale(1); }
+    5% { -webkit-transform: scale(1.03); }
+    7% { -webkit-transform: scale(1); }
+    10% { -webkit-transform: scale(1.05); }
+    15% { -webkit-transform: scale(1); }
+    100% { -webkit-transform: scale(1); }
+}
+
+@-moz-keyframes pulse {
+    0% { -webkit-transform: scale(1); }
+    5% { -webkit-transform: scale(1.03); }
+    7% { -webkit-transform: scale(1); }
+    10% { -webkit-transform: scale(1.05); }
+    15% { -webkit-transform: scale(1); }
+    100% { -webkit-transform: scale(1); }
+}
+
+@-o-keyframes pulse {
+    0% { -webkit-transform: scale(1); }
+    5% { -webkit-transform: scale(1.03); }
+    7% { -webkit-transform: scale(1); }
+    10% { -webkit-transform: scale(1.05); }
+    15% { -webkit-transform: scale(1); }
+    100% { -webkit-transform: scale(1); }
+}
+
+// Keyframe for opacity animations
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+@-moz-keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+@-webkit-keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+@-o-keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}

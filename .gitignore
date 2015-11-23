@@ -8,3 +8,8 @@ Homestead.json
 .env.php
 .DS_Store
 Thumbs.db
+resources/assets/.sass-cache
+resources/assets/bower_components
+resources/assets/node_modules
+public/css/style.min.css
+public/css/style.min.css.map
