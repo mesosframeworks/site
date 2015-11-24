@@ -28,7 +28,7 @@ module.exports = function(grunt) {
 			all : {
 				dest : "js/bundle.js",
 				exclude : ["modernizr"],
-				include : ["jquery"]
+				include : ["jquery", "foundation"]
 			}
 		},
 		
