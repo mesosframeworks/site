@@ -45,82 +45,11 @@
 			</nav>
 	        
 	        <div class="container">
-		        
-		        
-		        
-		        <div class="row">
-			        <div class="columns small-12">
-				        
-						<form>
-							<div class="row">
-								<div class="medium-10 columns">
-									<input type="text" placeholder="Enter the name for the new site">
-								</div>
-								<div class="medium-2 columns">
-									<button type="submit" value="new project">
-								</div>
-							</div>
-						</form>
-				        
-						<table class="scroll rtp-table">
-							<thead>
-								<tr>
-									<th>Site</th>
-									<th width="40"></th>
-									<th width="40"></th>
-									<th width="40"></th>
-									<th width="40"></th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>Elasticsearch</td>
-									<td><a href="#previewSite"><i class="material-icons">pageview</i></a></td>
-									<td><a href="#publishSite"><i class="material-icons">publish</i></a></td>
-									<td><a href="#editSite"><i class="material-icons">edit</i></a></td>
-									<td><a href="#deleteSite"><i class="material-icons">delete</i></a></td>
-								</tr>
-								
-								<tr>
-									<td>Flocker</td>
-									<td><a href="#previewSite"><i class="material-icons">pageview</i></a></td>
-									<td><a href="#publishSite"><i class="material-icons">publish</i></a></td>
-									<td><a href="#editSite"><i class="material-icons">edit</i></a></td>
-									<td><a href="#deleteSite"><i class="material-icons">delete</i></a></td>
-								</tr>
-								
-								<tr>
-									<td>Laravel</td>
-									<td><a href="#previewSite"><i class="material-icons">pageview</i></a></td>
-									<td><a href="#publishSite"><i class="material-icons">publish</i></a></td>
-									<td><a href="#editSite"><i class="material-icons">edit</i></a></td>
-									<td><a href="#deleteSite"><i class="material-icons">delete</i></a></td>
-								</tr>
-								
-								<tr>
-									<td>Homestead</td>
-									<td><a href="#previewSite"><i class="material-icons">pageview</i></a></td>
-									<td><a href="#publishSite"><i class="material-icons">publish</i></a></td>
-									<td><a href="#editSite"><i class="material-icons">edit</i></a></td>
-									<td><a href="#deleteSite"><i class="material-icons">delete</i></a></td>
-								</tr>
-							</tbody>
-						</table>
-				        
-						<ul class="pagination">
-							<li class="arrow unavailable"><a href="">&laquo;</a></li>
-							<li class="current"><a href="">1</a></li>
-							<li><a href="">2</a></li>
-							<li><a href="">3</a></li>
-							<li><a href="">4</a></li>
-							<li class="unavailable"><a href="">&hellip;</a></li>
-							<li><a href="">12</a></li>
-							<li><a href="">13</a></li>
-							<li class="arrow"><a href="">&raquo;</a></li>
-						</ul>
-				        
-			        </div>
-		        </div>
+				<form method="post" action="admin/theme" enctype="multipart/form-data">
+				<input type="file" id="file" name="file" />
+				{{ csrf_field() }}	
+				<input type="submit" />	        
+				</form>
 	        </div>
         </div>		
 		

@@ -29,10 +29,9 @@ Route::get('/', function () {
     return view('main');
 });
 
-Route::get('/admin', function () {
-    return view('admin.admin');
-});
+Route::get('/admin', 'AdminController@index');
 
+Route::post('/admin/theme', 'AdminController@addTheme');
 
 // Validation
 
