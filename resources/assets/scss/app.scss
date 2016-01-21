@@ -1,10 +1,10 @@
 // Import config
 
-@import "app/config";
+//@import "app/config";
 
 // Import Bourbon
 
-@import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
+//@import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
 
 // Import Normalize
 
@@ -12,7 +12,8 @@
 
 // Import Foundation
 
-@import "settings";
+/*
+@import "foundation-settings";
 
 @import
 	"../bower_components/foundation/scss/foundation/components/accordion",
@@ -50,6 +51,10 @@
 	"../bower_components/foundation/scss/foundation/components/type",
 	"../bower_components/foundation/scss/foundation/components/offcanvas",
 	"../bower_components/foundation/scss/foundation/components/visibility";
+*/
 
 // App
-@import "app/base"
+//@import "app/base"
+
+
+

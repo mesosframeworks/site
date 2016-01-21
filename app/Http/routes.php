@@ -20,13 +20,17 @@ Route::group(array('domain' => '{name}.rtp-cms.dev'), function()
 		}
 		*/
 	       
-        return view('sites.main', ['name' => $name, 'theme' => $theme]);
+        return view('sites.sites', ['name' => $name, 'theme' => $theme]);
     });
 
 });
 
 Route::get('/', function () {
     return view('main');
+});
+
+Route::get('/admin', function () {
+    return view('admin.admin');
 });
 
 

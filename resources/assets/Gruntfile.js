@@ -10,7 +10,8 @@ module.exports = function(grunt) {
 					style: "compressed"
       			},
 				files : {
-					"../../public/css/style.min.css" : "scss/main.scss",
+					"../../public/css/style.min.css" : "scss/app.scss",
+					"../../public/css/admin.min.css" : "scss/admin.scss",
 					"../../public/css/sites.min.css" : "scss/sites.scss"
 				}
 			}
