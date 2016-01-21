@@ -29,7 +29,7 @@
 					<ul class="right">
 						<li class="active"><a href="#">Right Button Active</a></li>
 						<li class="has-dropdown">
-							<a href="#">Ulises Soriano</a>
+							<a href="#">{{ $account }}</a>
 							<ul class="dropdown">
 								<li><a href="#">Profile</a></li>
 								<li class="active"><a href="#">Logout</a></li>

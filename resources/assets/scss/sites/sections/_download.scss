@@ -1,0 +1,13 @@
+.download {
+	background: $red;
+	color: white;
+	
+	a {
+		@include rtp-button();
+		margin: 0 3px;
+		
+		@media #{$large-up} {
+			margin: 0 13px;	
+		}
+	}
+}

@@ -1,0 +1,27 @@
+// Paths
+
+$fonts-path: "../../static/fonts/";
+$imgs-path: "../../dummies/imgs/";
+
+// Import fonts
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300italic,300,400italic,500,500italic,700italic,900,900italic,700);
+@import url(https://fonts.googleapis.com/css?family=Dosis:400,600);
+
+$font-text: 'Roboto', sans-serif;
+$font-header: 'Dosis', sans-serif;
+$font-header-bold: 'Dosis', sans-serif;
+
+// Colors
+
+$yellow: #ffc50b;
+$green: #64d1ac;
+$blue: #1ab7e9;
+$blue-dark: #2ea8d1;
+$blue-hover: #2c9fc6;
+$gray: #7e7f7f;
+$gray-dark: #515252;
+$gray-darker: #262626;
+
+$orange: #ea7b23;
+$red: #de452f;

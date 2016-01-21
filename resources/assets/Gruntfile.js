@@ -10,7 +10,8 @@ module.exports = function(grunt) {
 					style: "compressed"
       			},
 				files : {
-					"../../public/css/style.min.css" : "scss/main.scss"
+					"../../public/css/style.min.css" : "scss/main.scss",
+					"../../public/css/sites.min.css" : "scss/sites.scss"
 				}
 			}
 		},
@@ -39,7 +40,8 @@ module.exports = function(grunt) {
 					compress : true
     			},
 				files : {
-					"../../public/js/bundle.min.js" : ["js/bundle.js", "js/main.js"]
+					"../../public/js/bundle.min.js" : ["js/bundle.js", "js/main.js"],
+					"../../public/js/sites.min.js" : ["js/bundle.js", "js/sites.js"]
     			}
   			}
 		}

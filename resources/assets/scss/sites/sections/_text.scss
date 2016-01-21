@@ -1,0 +1,17 @@
+.text {
+	background: $orange;
+	color: white;
+	
+	h2 {
+		margin-bottom: 40px;
+	}
+	
+	a {
+		@include rtp-button();
+		margin: 0 3px;
+		
+		@media #{$large-up} {
+			margin: 0 13px;	
+		}
+	}
+}

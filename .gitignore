@@ -1,5 +1,6 @@
 /vendor
 /node_modules
+.idea/
 Homestead.yaml
 Homestead.json
 .env
@@ -15,3 +16,5 @@ public/css/style.min.css
 public/css/style.min.css.map
 resources/assets/js/bundle.js
 public/js/bundle.min.js
+public/js/sites.min.js
+resources/views/sites/themes
