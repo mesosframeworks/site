@@ -22,7 +22,7 @@
 		        </div>
 		        
 		        @if (isset($theme->github_link) && !empty($theme->github_link))
-		        <a class="github show-for-medium-up" href="{{ $theme->github_link }}" target="_blank">GitHub</a>
+		        	<a class="github show-for-medium-up" href="{{ $theme->github_link }}" target="_blank">GitHub</a>
 		        @endif
 		        
 	        </header>
@@ -31,51 +31,51 @@
 		        
 		        @foreach ($theme->sections as $section)
 				
-				@if ($section->type === 'text')
-				
-				<section class="{{ $section->type }}" style="background: {{ $section->background }}; color: {{ $section->color }}">
-			        <div class="row">
-				        <div class="columns small-12 large-8 large-centered">
-							<h3 class="heading decoration peaks-below">{{ $section->title }}</h3>
-					        {!! $section->text !!}
-					        @foreach ($section->links as $index => $link)
-					        <a href="{{ $link->url }}" target="{{ $link->target }}">{{ $link->text }}</a>
-					        @endforeach
-				        </div>
-			        </div>
-		        </section>
-		        
-		        @elseif ($section->type === 'list')
-		        	
-		        	<section class="{{ $section->type }}" id="features">
-			        
+					@if ($section->type === 'text')
+					
+					<section class="{{ $section->type }}" style="background: {{ $section->background }}; color: {{ $section->color }}">
 				        <div class="row">
-					        <div class="columns small-12 text-center">
-						        <h2 class="heading decoration peaks-below black-peaks">{{ $section->title }}</h2>
+					        <div class="columns small-12 large-8 large-centered">
+								<h3 class="heading decoration peaks-below">{{ $section->title }}</h3>
+						        {!! $section->text !!}
+						        @foreach ($section->links as $index => $link)
+						        <a href="{{ $link->url }}" target="{{ $link->target }}">{{ $link->text }}</a>
+						        @endforeach
 					        </div>
 				        </div>
+			        </section>
+			        
+			        @elseif ($section->type === 'list')
+			        	
+			        	<section class="{{ $section->type }}" id="features">
 				        
-				        @foreach ($section->items as $index => $item)
-				        				        
-				        <div class="row">
-					        <div class="columns small-12">
-						        <div class="inner @if ($index === 0) no-border @endif">
-							        <div class="columns small-3 medium-2 medium-offset-1 text-right">
-										<img src="dummies/imgs/icons/{{ $item->icon }}">
-							        </div>
-							        <div class="columns small-9 medium-8 end">
-								        <h3 class="heading decoration line-below">{{ $item->title }}</h3>
-								        <p>{{ $item->content }}</p>
+					        <div class="row">
+						        <div class="columns small-12 text-center">
+							        <h2 class="heading decoration peaks-below black-peaks">{{ $section->title }}</h2>
+						        </div>
+					        </div>
+					        
+					        @foreach ($section->items as $index => $item)
+					        				        
+					        <div class="row">
+						        <div class="columns small-12">
+							        <div class="inner @if ($index === 0) no-border @endif">
+								        <div class="columns small-3 medium-2 medium-offset-1 text-right">
+											<img src="dummies/imgs/icons/{{ $item->icon }}">
+								        </div>
+								        <div class="columns small-9 medium-8 end">
+									        <h3 class="heading decoration line-below">{{ $item->title }}</h3>
+									        <p>{{ $item->content }}</p>
+								        </div>
 							        </div>
 						        </div>
 					        </div>
-				        </div>
-				        
-				        @endforeach
-				       				        
-			        </section>
-		        	
-		        @endif
+					        
+					        @endforeach
+					       				        
+				        </section>
+			        	
+			        @endif
 				
 				@endforeach
 		        

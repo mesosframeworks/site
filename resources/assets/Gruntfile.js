@@ -30,7 +30,7 @@ module.exports = function(grunt) {
 			all : {
 				dest : "js/bundle.js",
 				exclude : ["modernizr"],
-				include : ["jquery", "foundation"]
+				include : ["jquery", "foundation", "dropzone"]
 			}
 		},
 		
@@ -42,7 +42,8 @@ module.exports = function(grunt) {
     			},
 				files : {
 					"../../public/js/bundle.min.js" : ["js/bundle.js", "js/main.js"],
-					"../../public/js/sites.min.js" : ["js/bundle.js", "js/sites.js"]
+					"../../public/js/sites.min.js" : ["js/bundle.js", "js/sites.js"],
+					"../../public/js/admin.min.js" : ["js/bundle.js", "js/admin.js"]
     			}
   			}
 		}

@@ -45,15 +45,19 @@
 			</nav>
 	        
 	        <div class="container">
-				<form method="post" action="admin/theme" enctype="multipart/form-data">
-				<input type="file" id="file" name="file" />
-				{{ csrf_field() }}	
-				<input type="submit" />	        
+
+				<form 
+					action="admin/theme"
+					class="dropzone"
+					id="my-awesome-dropzone"
+				>
+					{{ csrf_field() }}
 				</form>
+
 	        </div>
         </div>		
-		
-		<script src="js/bundle.min.js"></script>
+        		
+		<script src="js/admin.min.js"></script>
 
     </body>
 </html>
