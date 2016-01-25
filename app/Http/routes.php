@@ -7,7 +7,7 @@ Route::group(array('domain' => '{name}.rtp-cms.dev'), function()
     {	 
 	    
 	    
-	    $theme = json_decode(file_get_contents(public_path().'/uploads/sites/test.json'));
+	    $theme = json_decode(file_get_contents(public_path().'/uploads/sites/'.$name.'/theme.json'));
 	    
 	    //$foo = json_last_error();
 	    
@@ -20,7 +20,7 @@ Route::group(array('domain' => '{name}.rtp-cms.dev'), function()
 		}
 		*/
 	       
-        return view('sites.sites', ['name' => $name, 'theme' => $theme]);
+        return view('sites.sites', ['id' => $name, 'theme' => $theme]);
     });
 
 });

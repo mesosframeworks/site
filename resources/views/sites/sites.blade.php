@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>{{ $name }}</title>
+        <title>{{ $theme->name }}</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -17,7 +17,7 @@
 	        
 	        <header>
 		        <div class="vertical-align logo">
-			        <img src="dummies/imgs/logos/header-flocker.svg" alt="Mesos/Flocker">
+			        <img src="uploads/sites/{{ $id }}/logo.svg" alt="{{ $theme->name }}">
 			        <h1>{{ $theme->claim }}</h1>
 		        </div>
 		        
@@ -61,7 +61,7 @@
 						        <div class="columns small-12">
 							        <div class="inner @if ($index === 0) no-border @endif">
 								        <div class="columns small-3 medium-2 medium-offset-1 text-right">
-											<img src="dummies/imgs/icons/{{ $item->icon }}">
+											<img src="uploads/sites/{{ $id }}/{{ $item->icon }}">
 								        </div>
 								        <div class="columns small-9 medium-8 end">
 									        <h3 class="heading decoration line-below">{{ $item->title }}</h3>
