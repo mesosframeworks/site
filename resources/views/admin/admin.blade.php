@@ -27,9 +27,9 @@
 				<section class="top-bar-section">
 					<!-- Right Nav Section -->
 					<ul class="right">
-						<li class="active"><a href="#">Right Button Active</a></li>
+						<li class="active"><a href="#">Logo Generator</a></li>
 						<li class="has-dropdown">
-							<a href="#">Foo</a>
+							<a href="#">Ulises</a>
 							<ul class="dropdown">
 								<li><a href="#">Profile</a></li>
 								<li class="active"><a href="#">Logout</a></li>
@@ -39,7 +39,7 @@
 					
 					<!-- Left Nav Section -->
 					<ul class="left">
-						<li><a href="#">Left Nav Button</a></li>
+<!-- 						<li><a href="#">Left Nav Button</a></li> -->
 					</ul>
 				</section>
 			</nav>
@@ -49,7 +49,7 @@
 				<form 
 					action="admin/theme"
 					class="dropzone"
-					id="my-awesome-dropzone"
+					id="dropzone"
 				>
 					{{ csrf_field() }}
 				</form>

@@ -1,6 +1,6 @@
 var foo = function() {
 	
-	console.log("SITESISTES");
+	//console.log("SITESISTES");
 }
 
 $(function(){
@@ -10,5 +10,8 @@ $(function(){
 
 $(document).ready(function (){
 	
+	Dropzone.options.dropzone = {
 		
+		uploadMultiple : false
+	};	
 });
