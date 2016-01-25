@@ -1,9 +1,11 @@
-var foo = function() {
+var getHeaderMinHeight = function () {
 	
-	console.log("SITESISTES");
-}
+	$("header").css("minHeight", $(window).height());
+};
 
 $(function(){
 	
-	foo();
+	getHeaderMinHeight();
+	
+	window.addEventListener("resize", getHeaderMinHeight);
 });

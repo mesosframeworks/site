@@ -19,7 +19,6 @@ Route::group(array('domain' => '{name}.rtp-cms.dev'), function()
 			return view('sites.'.$account.'.main', ['account' => $account]);	
 		}
 		*/
-	       
         return view('sites.sites', ['id' => $name, 'theme' => $theme]);
     });
 
@@ -32,25 +31,3 @@ Route::get('/', function () {
 Route::get('/admin', 'AdminController@index');
 
 Route::post('/admin/theme', 'AdminController@addTheme');
-
-// Validation
-
-// Create record in database
-
-// Upload file
-
-// Unzip file
-
-// Check if json file exists and is valid
-
-// Put json file in place
-
-// Check if logo exists and is valid
-
-// Put logo in place
-
-// Check if there are images
-
-// Put images in place
-
-// Return to framework list

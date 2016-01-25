@@ -19,6 +19,8 @@
     "foundation": "~5.5.3",
     "bourbon": "~4.2.6",
     "material-design-icons": "~2.1.1",
-    "dropzone": "~4.2.0"
+    "dropzone": "~4.2.0",
+    "jquery.cycle2.min": "https://raw.github.com/malsup/malsup.github.com/master/min/jquery.cycle2.min.js",
+    "jquery.scrollTo": "~2.1.2"
   }
 }

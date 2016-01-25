@@ -29,7 +29,7 @@
 	        
 	        <div id="main" class="container">
 		        
-		        @foreach ($theme->sections as $section)
+		        @foreach ($theme->sections as $index => $section)
 				
 					@if ($section->type === 'text')
 					
@@ -47,34 +47,63 @@
 			        
 			        @elseif ($section->type === 'list')
 			        	
-			        	<section class="{{ $section->type }}" id="features">
-				        
-					        <div class="row">
-						        <div class="columns small-12 text-center">
-							        <h2 class="heading decoration peaks-below black-peaks">{{ $section->title }}</h2>
-						        </div>
+		        	<section class="{{ $section->type }}">
+			        
+				        <div class="row">
+					        <div class="columns small-12 text-center">
+						        <h2 class="heading decoration peaks-below black-peaks">{{ $section->title }}</h2>
 					        </div>
-					        
-					        @foreach ($section->items as $index => $item)
-					        				        
-					        <div class="row">
-						        <div class="columns small-12">
-							        <div class="inner @if ($index === 0) no-border @endif">
-								        <div class="columns small-3 medium-2 medium-offset-1 text-right">
-											<img src="uploads/sites/{{ $id }}/{{ $item->icon }}">
-								        </div>
-								        <div class="columns small-9 medium-8 end">
-									        <h3 class="heading decoration line-below">{{ $item->title }}</h3>
-									        <p>{{ $item->content }}</p>
-								        </div>
+				        </div>
+				        
+				        @foreach ($section->items as $index => $item)
+				        				        
+				        <div class="row">
+					        <div class="columns small-12">
+						        <div class="inner @if ($index === 0) no-border @endif">
+							        <div class="columns small-3 medium-2 medium-offset-1 text-right">
+										<img src="uploads/sites/{{ $id }}/{{ $item->icon }}">
+							        </div>
+							        <div class="columns small-9 medium-8 end">
+								        <h3 class="heading decoration line-below">{{ $item->title }}</h3>
+								        <p>{{ $item->content }}</p>
 							        </div>
 						        </div>
 					        </div>
-					        
-					        @endforeach
-					       				        
-				        </section>
-			        	
+				        </div>
+				        
+				        @endforeach
+				       				        
+			        </section>
+			        
+			        @elseif ($section->type === 'slideshow')
+				        
+			        <section class="{{ $section->type }}" style="background: {{ $section->background }}; color: {{ $section->color }}">
+				        <div class="row">
+					        <div class="columns small-12">
+						        <div>
+							        <div 
+								        class="cycle-slideshow slider" 
+								        data-cycle-pager="#slider-pager-{{ $index }}"
+										data-cycle-pager-template="<li><a href=#> @{{slideNum}} </a></li>"
+										data-cycle-slides="> .item"
+										data-cycle-log=false	
+									>
+										
+										@foreach ($section->slides as $slide)
+										
+									    <div class="item">
+										    <img src="uploads/sites/{{ $id }}/{{ $slide->slide }}">
+										    <p>{!! $slide->caption !!}</p>
+									    </div>
+									    
+									    @endforeach
+									</div>
+						        </div>
+								<ul id="slider-pager-{{ $index }}" class="pager"></div>
+					        </div>
+				        </div>
+			        </section>
+			        
 			        @endif
 				
 				@endforeach
@@ -82,22 +111,32 @@
 	        </div>
 	        
 	        <footer>
-		        <h3 class="heading decoration peaks-below">Index</h3>
 		        
+		        @if (isset($theme->footer_links) && !empty($theme->footer_links))
+		        <h3 class="heading decoration peaks-below">Index</h3>
 		        <div class="row">
-					<div class="columns small-6 text-right">
-				        <a href="https://clusterhq.com/" target="_blank" class="with-logo">
-					        <img src="dummies/imgs/logos/footer-cluster-hq.png">
-					        <span>ClusterHQ</span>
-				        </a>
-			        </div>
-			        <div class="columns small-6 text-left">
-				        <a href="http://container-solutions.com/" target="_blank" class="with-logo container-s">
-					        <img src="dummies/imgs/logos/footer-container-solutions.svg">
-					        <span>Container Solutions</span>
-				        </a>
+			        <div class="columns small-12">
+				        <ul>
+					        @foreach ($theme->footer_links as $index => $link)			
+					    	<li><a href="{{ $link->url }}" target="{{ $link->target }}">{{ $link->text }}</a></li>
+							@endforeach
+				        </ul>
 			        </div>
 		        </div>
+		        @endif
+		        
+		        @if (isset($theme->footer_logos) && !empty($theme->footer_logos))
+		        <div class="row">
+					@foreach ($theme->footer_logos as $link)			
+			    	<div class="columns small-6 text-right">
+				        <a href="{{ $link->url }}" target="{{ $link->target }}" class="with-logo">
+					        <img src="uploads/sites/{{ $id }}/{{ $link->logo }}">
+					        <span>{{ $link->text }}</span>
+				        </a>
+			        </div>
+					@endforeach
+		        </div>
+		        @endif
 		        
 		        @if (isset($theme->copyright) && !empty($theme->copyright))
 		        <p class="copyline">© {{ Date('Y') }}, {{ $theme->copyright }}</p>

@@ -30,11 +30,7 @@
 	}
 	
 	&.dz-drag-hover {
-		border-style: solid;	
-		
-		.dz-message {
-			opacity: 0.5;
-		}
+		opacity: 0.5;
 	}
 	
 	.dz-message {
@@ -47,7 +43,9 @@
 		color: #737373;
 	}
 	
-	
+	.dz-preview {
+		
+	}
 }
   
 
