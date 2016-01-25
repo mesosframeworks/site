@@ -63,4 +63,9 @@ class AdminController extends Controller
 	 	    
 	    dd($id);
     }
+    
+    public function deleteTheme() {
+	    
+	    dd('Delete theme');
+    }
 }

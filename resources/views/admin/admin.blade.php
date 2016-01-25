@@ -18,7 +18,7 @@
 			<nav class="top-bar" data-topbar role="navigation">
 				<ul class="title-area">
 					<li class="name">
-						<h1><a href="#">RTP Minisites CMS</a></h1>
+						<h1><a href="#">Mesos Frameworks</a></h1>
 					</li>
 					<!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
 					<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -27,7 +27,9 @@
 				<section class="top-bar-section">
 					<!-- Right Nav Section -->
 					<ul class="right">
-						<li class="active"><a href="#">Logo Generator</a></li>
+						<li class="active"><a href="#">Sites</a></li>
+						<li><a href="#">Logo Generator</a></li>
+						<li><a href="#">Docs</a></li>
 						<li class="has-dropdown">
 							<a href="#">Ulises</a>
 							<ul class="dropdown">
@@ -45,14 +47,34 @@
 			</nav>
 	        
 	        <div class="container">
-
-				<form 
-					action="admin/theme"
-					class="dropzone"
-					id="dropzone"
-				>
-					{{ csrf_field() }}
-				</form>
+				
+				<div class="row">
+					<div class="columns small-12">
+						<form 
+							action="admin/theme"
+							class="dropzone"
+							id="dropzone"
+						>
+							{{ csrf_field() }}
+						</form>
+					</div>
+				</div>
+				
+				<div class="row">
+										
+					<div class="columns small-6 medium-4">
+						<div class="site-thumb">
+							<img src="dummies/imgs/logos/header-flocker.svg">
+						</div>
+					</div>
+					
+					<div class="columns small-6 medium-4 end">
+						<div class="site-thumb">
+							<img src="dummies/imgs/logo.svg">
+						</div>
+					</div>
+				
+				</div>
 
 	        </div>
         </div>		

@@ -1,3 +1,17 @@
 .rtp-table {
 	width: 100%;
 }
+
+
+
+.site-thumb {
+	background: $gray;
+	min-height: 150px;
+	padding: 30px;
+	
+	img {
+		width: 244px;
+		height: 296px;
+		display: block;
+	}
+}
