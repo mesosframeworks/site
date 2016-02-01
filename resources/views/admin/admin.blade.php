@@ -47,9 +47,10 @@
 				<div class="row">
 					<div class="columns small-12">
 						<form 
+							method="post"
 							action="admin/theme"
 							class="dropzone"
-							id="dropzone"
+							id="addThemesBox"
 						>
 							{{ csrf_field() }}
 						</form>
@@ -62,18 +63,18 @@
 					
 						@foreach($sites as $index => $site)
 						
-						<div class="columns small-6 medium-4 @if(count($sites) === $index) end @endif">
+						<div class="columns small-6 medium-4 @if(count($sites) === $index + 1) end @endif">
 							<div class="site-thumb">
 								<img src="uploads/sites/{{ $site->site_id }}/logo.svg">
-								<div class="controls"
+								<div class="controls">
 									<ul>
-										<li><a href="#" class="download">Download</a></li>
-										<li><a href="#" class="public">Hide/Show</a></li>
-										<li><a href="http://{{ $site->site_id }}.rtp-cms.dev" class="preview">Preview</a></li>
-										<li><a href="#" class="delete">Delete</a></li>
+										<li><a href="{{ str_replace(public_path(), '', $site->backup) }}" class="download" title="Download site"><i class="material-icons">get_app</i></a></li>
+										<li><a href="#" class="public" title="Publish site"><i class="material-icons">turned_in_not</i></a></li>
+										<li><a href="http://{{ $site->site_id }}.rtp-cms.dev" class="preview" title="Preview site"><i class="material-icons">search</i></a></li>
+										<li><a href="#" class="delete" title="Delete site"><i class="material-icons">delete</i></a></li>
 									</ul>
-									<p>Created at: {{ $site->created_at }}</p>
-									<p>Last updated: {{ $site->updated_at }}</p>
+									<p><b>Created at</b>{{ $site->created_at }}</p>
+									<p><b>Last updated</b>{{ $site->updated_at }}</p>
 								</div>
 							</div>
 						</div>
@@ -94,6 +95,17 @@
         </div>		
         		
 		<script src="js/admin.min.js"></script>
-
+		<script>
+			
+			Dropzone.options.addThemesBox = {
+				maxFilesize : 100,
+				uploadMultiple : false,
+				acceptedFiles : '.zip',
+				accept : function(file) {
+					//alert('Done');
+				}
+			};
+			
+		</script>
     </body>
 </html>

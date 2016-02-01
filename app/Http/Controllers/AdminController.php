@@ -16,7 +16,7 @@ class AdminController extends Controller
  
     public function index() {
 		
-		$data['sites'] = Site::all();
+		$data['sites'] = Site::orderBy('updated_at', 'desc')->get();
 		
 		return view('admin.admin', $data);	    
     }
@@ -108,6 +108,14 @@ class AdminController extends Controller
     }
     
     public function deleteTheme() {
+		
+		// Find site
+		    
+	    // Delete files
+	    
+	    // Delete backup
+	    
+	    // Delete record in database
 	    
 	    dd('Delete theme');
     }
