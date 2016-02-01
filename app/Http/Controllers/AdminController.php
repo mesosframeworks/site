@@ -21,7 +21,7 @@ class AdminController extends Controller
 		return view('admin.admin', $data);	    
     }
     
-    public function addTheme(Request $request) {
+    public function addSite(Request $request) {
 	    
 	    // Upload file
 	    
@@ -104,19 +104,40 @@ class AdminController extends Controller
 		
 		// Return to framework list
 	 	    
-	    dd($id);
+	    return $site;
     }
     
-    public function deleteTheme() {
+    public function deleteSite($id) {
 		
 		// Find site
-		    
-	    // Delete files
+		$site = Site::findOrFail($id);
+		
+		if (!$site) return redirect('admin');
+		
+		// Delete files
+	    $theme_path = public_path().'/uploads/sites/'.$site->site_id;
+	    File::deleteDirectory($theme_path);
 	    
 	    // Delete backup
+	    unlink($site->backup);
 	    
 	    // Delete record in database
+	    $site->delete();
 	    
-	    dd('Delete theme');
+	    return redirect('admin');
+    }
+    
+    public function publishSite($id) {
+	    
+	    // Find site
+		$site = Site::findOrFail($id);
+		
+		$new_status = ($site->public === 0) ? 1 : 0;
+		
+		$site->public = $new_status;
+		
+		$site->save();
+		
+		return redirect('admin');
     }
 }

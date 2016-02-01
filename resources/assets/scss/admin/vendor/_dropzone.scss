@@ -5,6 +5,10 @@
 	margin-bottom: 30px;
 	position: relative;
 	margin-top: 50px;
+	-webkit-transition: all .2s ease-in-out;
+		  -moz-transition: all .2s ease-in-out;
+		  -o-transition: all .2s ease-in-out;
+		  transition: all .2s ease-in-out;
 	
 	&.dz-clickable {
 		cursor: pointer;
@@ -29,8 +33,9 @@
 		}	
 	}
 	
-	&.dz-drag-hover {
-		opacity: 0.5;
+	&.dz-drag-hover,
+	&:hover {
+		background: rgba(48, 246, 138, .9);
 	}
 	
 	.dz-message {

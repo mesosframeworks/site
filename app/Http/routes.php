@@ -9,12 +9,8 @@ Route::group(array('domain' => '{name}.rtp-cms.dev'), function()
 	    
 	    $theme = json_decode(file_get_contents(public_path().'/uploads/sites/'.$name.'/theme.json'));
 	    
-	    //$foo = json_last_error();
-	    
-	    //echo $foo;
-	    
-		/*
-		if (View::exists('sites.'.$account.'.main'))
+	    /*
+	    if (View::exists('sites.'.$account.'.main'))
 		{
 			return view('sites.'.$account.'.main', ['account' => $account]);	
 		}
@@ -30,4 +26,7 @@ Route::get('/', function () {
 
 Route::get('/admin', 'AdminController@index');
 
-Route::post('/admin/theme', 'AdminController@addTheme');
+Route::post('/admin/theme', 'AdminController@addSite');
+
+Route::get('/admin/site/delete/{id}', 'AdminController@deleteSite');
+Route::get('/admin/site/status/{id}', 'AdminController@publishSite');
