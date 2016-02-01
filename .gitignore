@@ -12,6 +12,7 @@ Thumbs.db
 resources/assets/.sass-cache
 resources/assets/bower_components
 resources/assets/node_modules
+resources/assets/js/temp/*
 public/css/*.min.css
 public/css/*.min.css.map
 resources/assets/js/bundle.js
