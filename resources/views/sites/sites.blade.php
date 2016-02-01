@@ -27,6 +27,7 @@
 		        
 	        </header>
 	        
+	        @if (isset($theme->sections) && !empty($theme->sections))
 	        <div id="main" class="container">
 		        
 		        @foreach ($theme->sections as $index => $section)
@@ -38,16 +39,18 @@
 					        <div class="columns small-12 large-8 large-centered">
 								<h3 class="heading decoration peaks-below">{{ $section->title }}</h3>
 						        {!! $section->text !!}
-						        @foreach ($section->links as $index => $link)
-						        <a href="{{ $link->url }}" target="{{ $link->target }}">{{ $link->text }}</a>
-						        @endforeach
+						        @if (isset($section->links) && !empty($section->links))
+							        @foreach ($section->links as $index => $link)
+							        <a class="btn" href="{{ $link->url }}" target="{{ $link->target }}">{{ $link->text }}</a>
+							        @endforeach
+						        @endif
 					        </div>
 				        </div>
 			        </section>
 			        
 			        @elseif ($section->type === 'list')
 			        	
-		        	<section class="{{ $section->type }}">
+		        	<section class="{{ $section->type }}" style="background: {{ $section->background }}; color: {{ $section->color }}">
 			        
 				        <div class="row">
 					        <div class="columns small-12 text-center">
@@ -82,7 +85,7 @@
 					        <div class="columns small-12">
 						        <div>
 							        <div 
-								        class="cycle-slideshow slider" 
+								        class="@if(count($section->slides) > 1) cycle-slideshow @endif slider" 
 								        data-cycle-pager="#slider-pager-{{ $index }}"
 										data-cycle-pager-template="<li><a href=#> @{{slideNum}} </a></li>"
 										data-cycle-slides="> .item"
@@ -99,7 +102,9 @@
 									    @endforeach
 									</div>
 						        </div>
+								@if(count($section->slides) > 1)
 								<ul id="slider-pager-{{ $index }}" class="pager"></div>
+								@endif
 					        </div>
 				        </div>
 			        </section>
@@ -109,6 +114,8 @@
 				@endforeach
 		        
 	        </div>
+	        
+	        @endif
 	        
 	        <footer>
 		        
@@ -127,14 +134,14 @@
 		        
 		        @if (isset($theme->footer_logos) && !empty($theme->footer_logos))
 		        <div class="row">
-					@foreach ($theme->footer_logos as $link)			
-			    	<div class="columns small-6 text-right">
+			        <div class="columns small-12">
+				        @foreach ($theme->footer_logos as $link)			
 				        <a href="{{ $link->url }}" target="{{ $link->target }}" class="with-logo">
 					        <img src="uploads/sites/{{ $id }}/{{ $link->logo }}">
 					        <span>{{ $link->text }}</span>
 				        </a>
+						@endforeach
 			        </div>
-					@endforeach
 		        </div>
 		        @endif
 		        

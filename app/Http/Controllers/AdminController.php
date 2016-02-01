@@ -7,12 +7,16 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Site;
+
 class AdminController extends Controller
 {
  
     public function index() {
 		
-		return view('admin.admin');	    
+		$data['sites'] = Site::all();
+		
+		return view('admin.admin', $data);	    
     }
     
     public function addTheme(Request $request) {
@@ -54,6 +58,12 @@ class AdminController extends Controller
 		// Check if logo exists and is valid
 		
 		// Create record in database
+		
+		$site = new Site;
+
+        $site->site_id = $id;
+
+        $site->save();
 		
 		// Delete ZIP file
 		

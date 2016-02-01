@@ -2,6 +2,7 @@ footer {
 	background: $gray-darker;
 	color: white;
 	padding-bottom: 20px;
+	text-align: center;
 	
 	a {
 		color: white;
@@ -9,6 +10,7 @@ footer {
 		
 		&.with-logo {
 			display: inline-block;
+			margin: 0 20px;
 			
 			&:hover {
 				opacity: .8;

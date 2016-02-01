@@ -6,7 +6,12 @@
 		margin-bottom: 40px;
 	}
 	
-	a {
+	p a {
+		color: white;
+		text-decoration: none;
+	}
+	
+	a.btn {
 		@include rtp-button();
 		margin: 0 3px;
 		

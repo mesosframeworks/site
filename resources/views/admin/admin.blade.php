@@ -25,7 +25,7 @@
 				</ul>
 				
 				<section class="top-bar-section">
-					<!-- Right Nav Section -->
+		
 					<ul class="right">
 						<li class="active"><a href="#">Sites</a></li>
 						<li><a href="#">Logo Generator</a></li>
@@ -38,11 +38,7 @@
 							</ul>
 						</li>
 					</ul>
-					
-					<!-- Left Nav Section -->
-					<ul class="left">
-<!-- 						<li><a href="#">Left Nav Button</a></li> -->
-					</ul>
+		
 				</section>
 			</nav>
 	        
@@ -61,18 +57,34 @@
 				</div>
 				
 				<div class="row">
-										
-					<div class="columns small-6 medium-4">
-						<div class="site-thumb">
-							<img src="dummies/imgs/logos/header-flocker.svg">
-						</div>
-					</div>
 					
-					<div class="columns small-6 medium-4 end">
-						<div class="site-thumb">
-							<img src="dummies/imgs/logo.svg">
+					@if(count($sites) >= 1) 
+					
+						@foreach($sites as $index => $site)
+						
+						<div class="columns small-6 medium-4 @if(count($sites) === $index) end @endif">
+							<div class="site-thumb">
+								<img src="uploads/sites/{{ $site->site_id }}/logo.svg">
+								<div class="controls"
+									<ul>
+										<li><a href="#" class="download">Download</a></li>
+										<li><a href="#" class="public">Hide/Show</a></li>
+										<li><a href="http://{{ $site->site_id }}.rtp-cms.dev" class="preview">Preview</a></li>
+										<li><a href="#" class="delete">Delete</a></li>
+									</ul>
+									<p>Created at: {{ $site->created_at }}</p>
+									<p>Last updated: {{ $site->updated_at }}</p>
+								</div>
+							</div>
 						</div>
-					</div>
+						
+						@endforeach
+											
+					@else
+					
+					No sites
+					
+					@endif
 				
 				</div>
 
