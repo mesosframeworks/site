@@ -82,7 +82,9 @@
 											
 					@else
 					
-					No sites
+					<div class="columns small-12">
+						<p>No sites</p>
+					</div>
 					
 					@endif
 				

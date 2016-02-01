@@ -6,8 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use File;
 
 use App\Site;
+use DateTime;
 
 class AdminController extends Controller
 {
@@ -26,17 +28,19 @@ class AdminController extends Controller
 	    $file = $request->file('file');
 	    $name = $file->getClientOriginalName();
 	    
+	    // Check if it's really a zip archive
+	    
 	    if ($file->getClientOriginalExtension() !== 'zip') {
 		    dd('No zip');
 	    }
-	    
-	    $id = substr($name, 0, -4);
+		
+		// Unzip file
+		
+		$id = substr($name, 0, -4);
 	    
 	    $file->move('uploads', $name);
 		
 		$path = 'uploads/'.$name;
-		
-		// Unzip file
 		
 		$zip = new \ZipArchive;
 		
@@ -46,25 +50,54 @@ class AdminController extends Controller
 			$zip->extractTo('uploads/sites/');
 			$zip->close();	
 		}
-	    
-	    // Validation
-	    
-	    	// Check if already exists in database
-	    
-	    	// Check if it's really a zip archive
-		
+	    	    
 		// Check if json file exists and is valid
+		
+		$theme_path = public_path().'/uploads/sites/'.$id.'/theme.json';
+		
+		json_decode($theme_path);
+		
+		if (!File::exists($theme_path) || json_last_error() != 4) {
+			dd('No valid json file!');
+		}
 				
 		// Check if logo exists and is valid
 		
-		// Create record in database
+		if (!File::exists(public_path().'/uploads/sites/'.$id.'/logo.svg')) {
+			dd('No valid logo file!');
+		}
 		
-		$site = new Site;
-
-        $site->site_id = $id;
-
-        $site->save();
 		
+		// Theme is valid!
+		
+		// Check if already exists in database
+		
+		$site = Site::where('site_id', $id)->first();
+		
+		if (!$site) {
+			
+			// Create record in database
+			
+			$site = new Site;
+		}
+		else {
+			// Delete old theme and old backup
+			unlink($site->backup);
+		}
+		
+		// Create backup
+		
+		$now = new DateTime();
+		
+		$backup_path = public_path().'/uploads/backups/'.$now->getTimestamp().'_'.$name;
+		
+		copy($path, $backup_path);
+		
+		// Update record in database
+		$site->backup = $backup_path;
+		$site->site_id = $id;
+		$site->save();
+			
 		// Delete ZIP file
 		
 		unlink($path);
