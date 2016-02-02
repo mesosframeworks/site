@@ -4,6 +4,8 @@ Route::group(array('domain' => '{name}.rtp-cms.dev'), function() {
     
     Route::get('/', function($name) {	 
 	    
+	    if ($name === 'logogenerator') return view('logogenerator.app');
+	    
 	    $theme = json_decode(file_get_contents(public_path().'/uploads/sites/'.$name.'/theme.json'));
 	    
 	    /*

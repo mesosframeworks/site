@@ -7,23 +7,24 @@ module.exports = function(grunt) {
 		watch: {
 			
 			scriptsadmin : {
-				files: ["js/*admin.js"],
+				files: ["js/admin.js"],
 				tasks: ["uglify:admin"]
 			},
 			scriptssites : {
-				files: ["js/*sites.js"],
+				files: ["js/sites.js"],
 				tasks: ["uglify:sites"]
 			},
-/*
+			/*
 			scriptsrepository : {
 				files: ["js/*repository.js"],
 				tasks: ["uglify:repository"]
 			},
+			*/
 			scriptslogoGenerator : {
-				files: ["scss/logoGenerator.scss"],
-				tasks: ["sass:logoGenerator"]
+				files: ["js/logoGenerator.js"],
+				tasks: ["uglify:logoGenerator"]
 			},
-*/
+
 			
 			stylesadmin : {
 				files: "**/*.scss",
@@ -33,16 +34,16 @@ module.exports = function(grunt) {
 				files: ["scss/*.scss"],
 			    tasks: ["sass:sites"]
 			},
-/*
+			/*
 			stylesrepository : {
 				files: ["scss/repository.scss"],
 				tasks: ["sass:repository"]
 			},
+			*/
 			styleslogoGenerator: {
-				files: ["scss/logoGenerator.scss"],
+				files: ["**/*.scss"],
 				tasks: ["sass:logoGenerator"]	
-			}
-*/		
+			}		
 		},
 		
 		sass : {
@@ -61,8 +62,8 @@ module.exports = function(grunt) {
 				files : {
 					"../../public/css/sites.min.css" : "scss/sites.scss"
 				}
-			}/*
-,
+			},
+			/*
 			repository : {
 				options: {                      
 					style: "compressed"
@@ -71,6 +72,7 @@ module.exports = function(grunt) {
 					"../../public/css/repository.min.css" : "scss/repository.scss"
 				}
 			},
+			*/
 			logoGenerator : {
 				options: {                      
 					style: "compressed"
@@ -79,7 +81,6 @@ module.exports = function(grunt) {
 					"../../public/css/logoGenerator.min.css" : "scss/logoGenerator.scss"
 				}
 			}
-*/
 		},
 		
 		bower_concat : {
@@ -139,7 +140,7 @@ module.exports = function(grunt) {
 					compress : true
     			},
 				files : {
-					"../../public/js/logoGenerator.min.js" : ["js/bundle-logoGenerator.js", "js/logoGenerator.js"]
+					"../../public/js/logoGenerator.min.js" : ["js/temp/bundle-logoGenerator.js", "js/logoGenerator.js"]
     			}
 			}
 		}
