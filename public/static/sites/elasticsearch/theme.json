@@ -1,0 +1,215 @@
+{
+	"name" : "ElasticSearch",
+	"claim" : "Scale your favorite Analytics Engine",
+	
+	"github_link" : "https://github.com/mesos/elasticsearch",
+	
+	"ga_tracking" : "",
+	
+	"sections" : {
+		
+		"intro" : {
+			"type" : "text",
+			"title" : "Description",
+			"text" : "<p>The Elasticsearch Mesos framework allows to deploy Elasticsearch on a large Mesos cluster which runs on any kind of hardware.</p>
+					  <p>The framework helps to automate installation, running and scaling of the system. The user interface shows the the cluster state and performance overview.</p>",
+			"background" : "#1ab7e9",
+			"color" : "white",
+			"links" : [
+				{
+					"text" : "Features",
+					"url" : "#features",
+					"target" : "",
+					"type" : "scroll"
+				},
+				{
+					"text" : "Documentation",
+					"url" : "http://mesos-elasticsearch.readthedocs.org/en/latest/#getting-started",
+					"target" : "_blank"
+				}
+			]		
+		},
+		
+		"infographic" : {
+			"type" : "slideshow",
+			"background" : "#FFFFFF",
+			"color" : "#000000",
+			
+			"slides" : [
+				{
+					"slide" : "infographic-slider/01.png",
+					"caption" : "<b>STEP 1.</b>Mesos cluster with Marathon and Chronos frameworks already running."
+				},
+				{
+					"slide" : "infographic-slider/02a.png",
+					"caption" : "<b>STEP 2a.</b>ES framework scheduler is deployed to the master node with a configured number (3) of slaves to be launched."
+				},
+				{
+					"slide" : "infographic-slider/02b.png",
+					"caption" : "<b>STEP 2b.</b>Scheduler receives resource offers from Mesos."
+				},
+				{
+					"slide" : "infographic-slider/03.png",
+					"caption" : "<b>STEP 3.</b>Once ES scheduler accepts the offers, it deploys executors together with ES nodes in containers to Mesos slaves."
+				},
+				{
+					"slide" : "infographic-slider/04.png",
+					"caption" : "<b>STEP 4.</b>ES nodes discovery. Zookeeper plugins in ES nodes registers with Zookeeper. This allows the nodes to find each other."
+				},
+				{
+					"slide" : "infographic-slider/05.png",
+					"caption" : "<b>STEP 5.</b>The ES nodes found each other and form a cluster."
+				}
+			]
+		},
+		
+		"features" : {
+			"type" : "list",
+			"title" : "features",
+			"background" : "",
+			"color" : "",
+			
+			"items" : [
+			
+				{
+					"title" : "Cloud",
+					"content" : "Runs on ​_any_​ hardware, cloud or on-premises (* minimum RAM requirements for ES process).",
+					"icon" : "icon-cloud.svg"
+				},
+				{
+					"title" : "Resilence",
+					"content" : "Restarts failed tasks automatically.",
+					"icon" : "icon-resilence.svg"
+				},
+				{
+					"title" : "Discovery",
+					"content" : "Discovery via Elasticsearch Zookeeper plugin.",
+					"icon" : "icon-discovery.svg"
+				},
+				{
+					"title" : "Scaling",
+					"content" : "The framework can be scaled up and down horizontally.",
+					"icon" : "icon-scaling.svg"
+				},
+				{
+					"title" : "Runtime",
+					"content" : "Run the framework as Java processes or Docker containers.",
+					"icon" : "icon-runtime.svg"
+				},
+				{
+					"title" : "User Interface",
+					"content" : "Web user interface on scheduler port 31100.",
+					"icon" : "icon-ui.svg"
+				},
+				{
+					"title" : "api",
+					"content" : "Access information of the UI via the API.",
+					"icon" : "icon-api.svg"
+				},
+				{
+					"title" : "Written in java",
+					"content" : "The framework is implemented written in Java 8.",
+					"icon" : "icon-java.svg"
+				},
+				{
+					"title" : "Configurable",
+					"content" : "Cluster settings such as dimensions, cluster name and Elasticsearch settings are configurable.",
+					"icon" : "icon-configurable.svg"
+				},
+				{
+					"title" : "Tested",
+					"content" : "The major features of the framework are tested by minimesos system tests.",
+					"icon" : "icon-tested.svg"
+				},
+				{
+					"title" : "Free",
+					"content" : "The framework is open source and free to use.",
+					"icon" : "icon-free.svg"
+				}
+			]
+		},
+		
+		"product" : {
+			"type" : "slideshow",
+			"background" : "#64d1ac",
+			"color" : "#FFFFFF",
+			
+			"slides" : [
+				{
+					"slide" : "product-slider/01.png",
+					"caption" : ""
+				},
+				{
+					"slide" : "product-slider/02.png",
+					"caption" : ""
+				},
+				{
+					"slide" : "product-slider/03.png",
+					"caption" : ""
+				}
+			]
+		},
+		
+		"download" : {
+			"type" : "text",
+			"title" : "Download",
+			"text" : "<p>VERSION 0.6.0 released 9.11.2015gi</p>",
+			"background" : "#1ab7e9",
+			"color" : "white",
+			
+			"links" : [
+				
+				{
+					"text" : "Roadmap",
+					"url" : "http://mesos-elasticsearch.readthedocs.org/en/latest/#roadmap",
+					"target" : "_blank"
+				}
+			]		
+		}
+	},
+		
+	"footer_links" : [
+		{
+			"text" : "Introduction",
+			"url" : "http://mesos-elasticsearch.readthedocs.org/en/latest/",
+			"target" : ""
+		},
+		{
+			"text" : "Documentation",
+			"url" : "http://mesos-elasticsearch.readthedocs.org/en/latest/#getting-started",
+			"target" : ""
+		},
+		{
+			"text" : "Roadmap",
+			"url" : "http://mesos-elasticsearch.readthedocs.org/en/latest/#roadmap",
+			"target" : ""
+		},
+		{
+			"text" : "Repository",
+			"url" : "https://github.com/mesos/elasticsearch",
+			"target" : ""
+		},
+		{
+			"text" : "Contact",
+			"url" : "mailto:mesos-es@container-solutions.com",
+			"target" : "_blank"
+		}	
+	],
+		
+	"footer_logos" : [
+		{
+			"logo" : "logo-cisco.svg",
+			"text" : "Cisco Systems",
+			"url" : "http://www.cisco.com/",
+			"target" : "_blank"
+		},
+		{
+			"logo" : "logo-container-solutions.svg",
+			"text" : "Container Solutions",
+			"url" : "http://container-solutions.com/",
+			"target" : "_blank"
+		}
+	],
+	
+	"copyright" : "Container Solutions"
+}	

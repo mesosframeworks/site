@@ -88,7 +88,7 @@ module.exports = function(grunt) {
 			admin : {
 				dest : "js/temp/bundle-admin.js",
 				exclude : ["modernizr"],
-				include : ["jquery", "foundation", "dropzone"]
+				include : ["jquery", "foundation", "dropzone", "prism"]
 			},
 			sites : {
 				dest : "js/temp/bundle-sites.js",

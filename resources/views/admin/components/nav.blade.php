@@ -18,13 +18,13 @@
 
 		<ul class="right">
 
-			<li class="active"><a href="{{ url('admin/sites') }}">Sites</a></li>
+			<li @if( isset($section_id) && $section_id === 'sites') class="active" @endif><a href="{{ url('admin') }}">Sites</a></li>
 
 			<li><a href="http://logogenerator.rtp-cms.dev">Logo Generator</a></li>
 
-			<li><a href="{{ url('admin/docs') }}">Docs</a></li>
+			<li @if( isset($section_id) && $section_id === 'docs') class="active" @endif><a href="{{ url('admin/docs') }}">Docs</a></li>
 			
-			<li class="active"><a href="{{ url('admin/logout') }}">Logout</a></li>
+			<li><a href="{{ url('admin/logout') }}">Logout</a></li>
 
 		</ul>
 

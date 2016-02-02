@@ -21,6 +21,8 @@ class AdminController extends Controller
  
     public function index() {
 		
+		$data['section_id'] = 'sites';
+		
 		$data['sites'] = Site::orderBy('updated_at', 'desc')->get();
 		
 		return view('admin.sites', $data);	    
@@ -144,5 +146,12 @@ class AdminController extends Controller
 		$site->save();
 		
 		return redirect('admin');
+    }
+    
+    public function docs() {
+	    
+	    $data['section_id'] = 'docs';
+	    
+	    return view('admin.docs', $data);
     }
 }

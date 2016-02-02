@@ -30,6 +30,8 @@ Route::group(['prefix' => 'admin'], function () {
 	Route::get('/site/delete/{id}', 'AdminController@deleteSite');
 	Route::get('/site/status/{id}', 'AdminController@publishSite');
 
+	Route::get('/docs', 'AdminController@docs');
+
 });
 
 
