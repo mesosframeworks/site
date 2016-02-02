@@ -13,12 +13,17 @@ use DateTime;
 
 class AdminController extends Controller
 {
+	
+	public function __construct()
+    {
+        $this->middleware('auth');
+    }
  
     public function index() {
 		
 		$data['sites'] = Site::orderBy('updated_at', 'desc')->get();
 		
-		return view('admin.admin', $data);	    
+		return view('admin.sites', $data);	    
     }
     
     public function addSite(Request $request) {

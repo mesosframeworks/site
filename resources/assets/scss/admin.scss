@@ -12,7 +12,7 @@
 
 // Import Foundation
 
-@import "foundation-settings";
+@import "foundation-settings-admin";
 
 @import
 	"../bower_components/foundation/scss/foundation/components/accordion",
@@ -55,3 +55,4 @@
 
 // App
 @import "admin/base";
+@import "admin/login"

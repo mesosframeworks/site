@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'url' => 'http://localhost',
+    'url' => 'http://rtp-cms.dev',
 
     /*
     |--------------------------------------------------------------------------
@@ -202,5 +202,7 @@ return [
         'Zipper'    => Chumper\Zipper\Zipper::class,
 
     ],
+    
+    'env' => env('APP_ENV', 'dev'),
 
 ];
