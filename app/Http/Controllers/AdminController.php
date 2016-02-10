@@ -150,7 +150,19 @@ class AdminController extends Controller
     
     public function docs() {
 	    
+	    $filename = public_path().'/static/admin/docs/test.json';
+	    
+	    try
+		{
+		    $contents = File::get($filename);
+		}
+		catch (Illuminate\Filesystem\FileNotFoundException $exception)
+		{
+		    die("The file doesn't exist");
+		}
+	    
 	    $data['section_id'] = 'docs';
+	    $data['content'] = $contents;
 	    
 	    return view('admin.docs', $data);
     }

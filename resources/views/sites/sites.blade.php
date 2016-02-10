@@ -1,16 +1,25 @@
 <!doctype html>
+
 <html class="no-js" lang="en">
+
     <head>
+
         <meta charset="utf-8">
+
         <meta http-equiv="x-ua-compatible" content="ie=edge">
+
         <title>{{ $theme->name or '' }}</title>
+
         <meta name="description" content="">
+
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="css/sites.min.css">
+
 		<script src="js/vendor/modernizr-2.8.3.min.js"></script>
 		
     </head>
+
     <body>
         
         <div id="page-wrapper">
@@ -25,15 +34,15 @@
 				
 					@if ($section->type === 'text')
 					
-						@include('sites.components.text', ['section' => $section, 'index' => $index]);
+						@include('sites.components.text', ['section' => $section, 'index' => $index])
 			        
 			        @elseif ($section->type === 'list')
 			        	
-		        		@include('sites.components.list', ['section' => $section, 'index' => $index]);
+		        		@include('sites.components.list', ['section' => $section, 'index' => $index])
 			        
 			        @elseif ($section->type === 'slideshow')
 			        
-			        	@include('sites.components.slideshow', ['section' => $section, 'index' => $index]);
+			        	@include('sites.components.slideshow', ['section' => $section, 'index' => $index])
 			        
 			        @endif
 				

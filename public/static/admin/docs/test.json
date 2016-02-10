@@ -1,0 +1,32 @@
+{
+	"name" : "SITE_NAME",
+	"claim" : "SITE_CLAIM",
+	
+	"github_link" : "URL_TO_GITHUB_REPOSITORY",
+	
+	"ga_tracking" : "GOOGLE_ANALYTICS_CODE",
+	
+	"sections" : {
+		
+	},
+		
+	"footer_links" : [
+		{
+			"text" : "LINK",
+			"url" : "URL_LINK",
+			"target" : "TARGET_LINK",
+			"type" : "TYPE_LINK"
+		}
+	],
+		
+	"footer_logos" : [
+		{
+			"logo" : "LOGO_SVG",
+			"text" : "TEXT_LINK",
+			"url" : "URL_LINK",
+			"target" : "TARGET_LINK"
+		}
+	],
+	
+	"copyright" : "COPYRIGHT_OWNER"
+}	

@@ -30,47 +30,12 @@
 	
 </div>
 
+
 <div class="row">
 
 	<div class="columns small-12 medium-6">
 		
-<pre class="syntax">
-	
-<code class="language-json">
-{
-	"name" : "SITE_NAME",
-	"claim" : "SITE_CLAIM",
-	
-	"github_link" : "URL_TO_GITHUB_REPOSITORY",
-	
-	"ga_tracking" : "GOOGLE_ANALYTICS_CODE",
-	
-	"sections" : {
-		
-	},
-		
-	"footer_links" : [
-		{
-			"text" : "LINK",
-			"url" : "URL_LINK",
-			"target" : "TARGET_LINK",
-			"type" : "TYPE_LINK"
-		}
-	],
-		
-	"footer_logos" : [
-		{
-			"logo" : "LOGO_SVG",
-			"text" : TEXT_LINK",
-			"url" : "URL_LINK",
-			"target" : "TARGET_LINK"
-		}
-	],
-	
-	"copyright" : "COPYRIGHT_OWNER"
-}	
-</code>
-</pre>
+		<pre class="syntax"><code class="language-json">{{ $content }}</code></pre>
 
 	</div>
 	
@@ -217,36 +182,213 @@
 		
 		<h4>Slideshow</h4>
 		
+		
+		</div>
+	
+</div>
+
+<div class="row">
+
+	<div class="columns small-12 medium-6">
+		
+<pre class="syntax">
+	
+<code class="language-json">
+"SECTION_ID" : {
+	"type" : "text", // This is mandatory
+	"title" : "SECTION_TITLE",
+	"background" : "BACKGROUND_COLOR",
+	"color" : "white", // Or black
+	"slides" : [
+		{
+			"slide" : "IMAGE_ROUTE",
+			"caption" : "IMAGE_CAPTION"
+		}
+	]	
+},
+</code>
+</pre>
+
+	</div>
+	
+	<div class="columns small-12 medium-6">
+		
+<pre class="example">
+	
+<code class="language-json">
+"infographic" : {
+	"type" : "slideshow",
+	"background" : "#FFFFFF",
+	"color" : "black",
+	"slides" : [
+		{
+			"slide" : "picture01.png",
+			"caption" : "&lt;b&gt;STEP 1.&lt;/b&gt; You can use HTML here."
+		},
+		{
+			"slide" : "pi02a.png",
+			"caption" : "&lt;b&gt;STEP 2a.&lt;/b&gt; Another caption."
+		}
+	]
+},
+</code>
+</pre>	
+	</div>
+</div>
+
+<div class="row">
+
+	<div class="columns small-12 medium-8 medium-offset-1">
+		
 		<h4>List</h4>
 		
-		<p></p>
+		</div>
+	
+</div>
+
+<div class="row">
+
+	<div class="columns small-12 medium-6">
 		
+<pre class="syntax">
+	
+<code class="language-json">
+"SECTION_ID" : {
+	"type" : "list",
+	"title" : "SECTION_TITLE",
+	"background" : "SECTION_BACKGROUND",
+	"color" : "white", // Or black
+	
+	"items" : [
+	
+		{
+			"title" : "ITEM_TITLE",
+			"content" : "ITEM_CONTENT",
+			"icon" : "ITEM_ICON"
+		}
+	]
+}
+</code>
+</pre>
+
+	</div>
+	
+	<div class="columns small-12 medium-6">
+		
+<pre class="example">
+	
+<code class="language-json">
+
+</code>
+</pre>	
+
+	</div>
+</div>
+
+<div class="row">
+
+	<div class="columns small-12 medium-8 medium-offset-1">
+				
 		<h3>Same page links</h3>
 		
-		<p></p>
+		<p>When adding links you can also make the site scroll to a given section. You just need to specify the <code>"type" : "internal"</code> and just pass the ID of an existing section to the <code>"url" : "#SECTION_ID"</code></p>
 		
-		<h3></h3>
+		<p>This technique can be used in text and footer sections.</p>
 		
-		<p></p>
+	</div></div>
+<div class="row">
+
+<div class="columns small-12">
+
+<pre class="example expand">
+
+<code class="language-json">
+
+"links" : [
+	{
+		"text" : "Scroll to Features section",
+		"url" : "#features",
+		"target" : "",
+		"type" : "internal"
+	}
+]	
+
+</code>
+</pre>
+
+</div>
+</div>
 		
-		<h3></h3>
+	<div class="row">
+
+	<div class="columns small-12 medium-8 medium-offset-1">	
 		
-		<p></p>
+		<h3>Adding images</h3>
 		
-		<h3></h3>
+		<p>When you reference a file inside a list of features or a slideshow, you make all the paths relative to the <code>theme.json</code> file. You can create other directories, as long as you include them when referencing a file.</p>
 		
-		<p></p>
+		<p>If for instance you want to keep some set of pictures for a slideshow in a different directory, like this:</p>
 		
-		<h3></h3>
+		<p><img src="{!! URL::asset('static/admin/docs/files_01.png') !!}"></p>
 		
-		<p></p>
+		<p>You have to be sure that you added the full relative path to the json object:</p>
+	
+	</div>
+
+</div>
+
+<div class="row">
+
+	<div class="columns small-12">
 		
-		<h3></h3>
-		
-		<p></p>
+		<pre class="example expand">
+	
+<code class="language-json">
+"slides" : [
+	{
+		"slide" : "infographic-slider/01.png",
+		"caption" : "&lt;b&gt;STEP 1.&lt;/b&gt;Mesos cluster."
+	},
+	{
+		"slide" : "infographic-slider/02a.png",
+		"caption" : "&lt;b&gt;STEP 2a.&lt;/b&gt;ES framework scheduler."
+	},
+	{
+		"slide" : "infographic-slider/02b.png",
+		"caption" : "&lt;b&gt;STEP 2b.&lt;/b&gt;Scheduler receives."
+	},
+	{
+		"slide" : "infographic-slider/03.png",
+		"caption" : "&lt;b&gt;STEP 3.&lt;/b&gt;Once ES scheduler."
+	},
+	{
+		"slide" : "infographic-slider/04.png",
+		"caption" : "&lt;b&gt;STEP 4.&lt;/b&gt;ES nodes discovery."
+	},
+	{
+		"slide" : "infographic-slider/05.png",
+		"caption" : "&lt;b&gt;STEP 5.&lt;/b&gt;The ES nodes."
+	}
+]				
+				
+</code>
+</pre>
 		
 	</div>
 </div>
+
+<div class="row">
+
+	<div class="columns small-12 medium-8 medium-offset-1">
+		
+		<h3>Example</h3>
+		
+		<p>This example belongs to the Elastic Search framework minisite. Other examples can be found by downloading the site on the <a href="{{ url('/admin/') }}">main admin page</a>.</p>
+		
+		</div>
+	
+</div>
+
 <div class="row">
 
 	<div class="columns small-12">
