@@ -49,6 +49,7 @@ body, html, .wrapper, .container {
 		li {
 			display: inline-block;
 			list-style: none;
+			margin: 0 4px;
 			
 			a {
 				display: block;
@@ -66,6 +67,7 @@ body, html, .wrapper, .container {
 	p {
 		margin: 0;
 		font-size: 12px;
+		color: #737373;
 		
 		b {
 			display: block;

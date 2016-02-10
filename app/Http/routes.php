@@ -1,21 +1,16 @@
 <?php
-
+	
 Route::group(array('domain' => '{name}.rtp-cms.dev'), function() {
     
     Route::get('/', function($name) {	 
 	    
 	    if ($name === 'logogenerator') return view('logogenerator.app');
 	    
-	    $theme = json_decode(file_get_contents(public_path().'/uploads/sites/'.$name.'/theme.json'));
+	    $model = App\Site::where('site_id', '=', $name)->firstOrFail();
 	    
-	    /*
-	    if (View::exists('sites.'.$account.'.main'))
-		{
-			return view('sites.'.$account.'.main', ['account' => $account]);	
-		}
-		*/
-        
-        return view('sites.sites', ['id' => $name, 'theme' => $theme]);
+	    $site = json_decode(file_get_contents(public_path().'/uploads/sites/'.$name.'/theme.json'));
+	    
+	    return view('sites.sites', ['id' => $name, 'theme' => $site]);
     
     });
 
@@ -46,7 +41,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 Route::get('/', function () {
 
-    return view('main');
+    return view('repository.index');
 
 });
 

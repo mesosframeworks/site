@@ -14,12 +14,10 @@ module.exports = function(grunt) {
 				files: ["js/sites.js"],
 				tasks: ["uglify:sites"]
 			},
-			/*
 			scriptsrepository : {
 				files: ["js/*repository.js"],
 				tasks: ["uglify:repository"]
 			},
-			*/
 			scriptslogoGenerator : {
 				files: ["js/logoGenerator.js"],
 				tasks: ["uglify:logoGenerator"]
@@ -31,15 +29,13 @@ module.exports = function(grunt) {
 			    tasks: ["sass:admin"]		
 			},
 			stylessites : {
-				files: ["scss/*.scss"],
+				files: ["**/*.scss"],
 			    tasks: ["sass:sites"]
 			},
-			/*
 			stylesrepository : {
-				files: ["scss/repository.scss"],
+				files: ["**/*.scss"],
 				tasks: ["sass:repository"]
 			},
-			*/
 			styleslogoGenerator: {
 				files: ["**/*.scss"],
 				tasks: ["sass:logoGenerator"]	
@@ -52,7 +48,7 @@ module.exports = function(grunt) {
 					style: "compressed"
       			},
 				files : {
-					"../../public/css/admin.min.css" : "scss/admin.scss"
+					"../../public/css/admin.min.css" : "scss/admin/main.scss"
 				}
 			},
 			sites : {
@@ -60,19 +56,17 @@ module.exports = function(grunt) {
 					style: "compressed"
       			},
 				files : {
-					"../../public/css/sites.min.css" : "scss/sites.scss"
+					"../../public/css/sites.min.css" : "scss/sites/main.scss"
 				}
 			},
-			/*
 			repository : {
 				options: {                      
 					style: "compressed"
       			},
 				files : {
-					"../../public/css/repository.min.css" : "scss/repository.scss"
+					"../../public/css/repository.min.css" : "scss/repository/main.scss"
 				}
 			},
-			*/
 			logoGenerator : {
 				options: {                      
 					style: "compressed"

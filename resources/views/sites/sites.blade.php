@@ -43,6 +43,10 @@
 			        @elseif ($section->type === 'slideshow')
 			        
 			        	@include('sites.components.slideshow', ['section' => $section, 'index' => $index])
+			        	
+			        @elseif ($section->type === 'video')
+			        
+			        	@include('sites.components.video', ['section' => $section, 'index' => $index])
 			        
 			        @endif
 				
