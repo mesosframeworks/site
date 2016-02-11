@@ -72,7 +72,7 @@ module.exports = function(grunt) {
 					style: "compressed"
       			},
 				files : {
-					"../../public/css/logoGenerator.min.css" : "scss/logoGenerator.scss"
+					"../../public/css/logoGenerator.min.css" : "scss/logoGenerator/main.scss"
 				}
 			}
 		},
