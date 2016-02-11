@@ -1,6 +1,6 @@
 <?php
 	
-Route::group(array('domain' => '{name}.rtp-cms.dev'), function() {
+Route::group(array('domain' => '{name}.'.env('APP_URL_SIMPLE')), function() {
     
     Route::get('/', function($name) {	 
 	    
@@ -29,16 +29,6 @@ Route::group(['prefix' => 'admin'], function () {
 
 });
 
-
-
-
-
-
-
-
-
-
-
 Route::get('/', function () {
 
     return view('repository.index');
@@ -46,15 +36,8 @@ Route::get('/', function () {
 });
 
 
-
-
-
-
-
 /*
 Route::group(['middleware' => 'web'], function () {
-
-    
 
     Route::get('/home', 'HomeController@index');
 
