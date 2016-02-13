@@ -67,6 +67,10 @@
 @import "sections/video";
 */
 
+html, body, .wrapper, .container {
+	height: 100%;
+}
+
 body {
 	text-align: center;
 	font-family: $font-text;
@@ -89,6 +93,11 @@ header {
 
 .site-list {
 	margin-bottom: 20px;
+	min-height: 100%;
+	
+	@media #{$large-up} {
+		margin-bottom: 60px;	
+	}
 	
 	.site {
 		display: block;
@@ -98,11 +107,22 @@ header {
 		margin-bottom: 10px;
 		position: relative;
 		text-align: left;
+		transition: background-color 0.5s ease;
 		
 		img {
 			width: 70px;
 			max-height: 70px;
 			display: block;
+			
+			@media #{$medium-up} {
+				width: 100px;
+				max-height: 100px;			
+			}
+			
+			@media #{$large-up} {
+				width: 150px;
+				max-height: 150px;	
+			}
 		}
 		
 		p {
@@ -113,6 +133,16 @@ header {
 			padding-right: 10px;
 			font-size: 12px;
 			
+			@media #{$medium-up} {
+				left: 120px;
+				font-size: 13px;			
+			}
+			
+			@media #{$large-up} {
+				left: 160px;
+				font-size: 15px;	
+			}
+			
 			span {
 				font-family: $font-header;
 				font-weight: 600;
@@ -121,7 +151,16 @@ header {
 				color: black;
 				text-transform: uppercase;
 				line-height: 2em;
+				
+				@media #{$medium-up} {
+					font-size: 15px;			
+					font-size: 17px;
+				}
 			}
+		}
+		
+		&:hover {
+			background: $gray-lighter;
 		}
 	}	
 }
