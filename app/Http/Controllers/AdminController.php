@@ -105,7 +105,7 @@ class AdminController extends Controller
 		
 		$backup_path = public_path().'/uploads/backups/'.$now->getTimestamp().'_'.$name;
 		
-		copy($path, $backup_path);
+		//copy($path, $backup_path);
 		
 		// Update record in database
 		$site->backup = $backup_path;
