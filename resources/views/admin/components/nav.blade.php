@@ -20,7 +20,7 @@
 
 			<li @if( isset($section_id) && $section_id === 'sites') class="active" @endif><a href="{{ url('admin') }}">Sites</a></li>
 
-			<li><a href="http://logogenerator.rtp-cms.dev">Logo Generator</a></li>
+			<li><a href="http://logogenerator.{{ env('APP_URL_SIMPLE') }}">Logo Generator</a></li>
 
 			<li @if( isset($section_id) && $section_id === 'docs') class="active" @endif><a href="{{ url('admin/docs') }}">Docs</a></li>
 			
