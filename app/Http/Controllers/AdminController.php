@@ -74,6 +74,13 @@ class AdminController extends Controller
 			dd('No valid logo file!');
 		}
 		
+		$contents = json_decode(file_get_contents($theme_path), true);
+		
+		foreach ($contents as $index => $value) {
+			if($index === 'claim') {
+				$claim = $value;
+			}
+		}
 		
 		// Theme is valid!
 		
@@ -103,6 +110,7 @@ class AdminController extends Controller
 		// Update record in database
 		$site->backup = $backup_path;
 		$site->site_id = $id;
+		$site->claim = $claim;
 		$site->save();
 			
 		// Delete ZIP file

@@ -49,8 +49,10 @@
 	"../../bower_components/foundation/scss/foundation/components/visibility";
 
 // App
+
+@import "../sites/config"; 
+
 /*
-@import "config"; 
 @import "base"; 
 
 @import "elements/typography";
@@ -66,13 +68,69 @@
 */
 
 body {
-	background: #0cbcd3;
 	text-align: center;
-	padding: 50px;
+	font-family: $font-text;
+	font-size: 13px;
+	font-weight: 300;
+	line-height: 1.2em;
+	
+	@media #{$medium-up} {
+		font-size: 20px;			
+	}
 }
 
-h2 {
-	font-size: 100px;
-	color: white;
-	text-transform: uppercase;
+header {
+	background: #0cbcd3;
+	text-align: center;
+	padding: 10px;
+	margin-bottom: 20px;
+	height: 85px;
+}
+
+.site-list {
+	margin-bottom: 20px;
+	
+	.site {
+		display: block;
+		padding: 10px;
+		//background: $gray-lighter;
+		color: $gray-light;
+		margin-bottom: 10px;
+		position: relative;
+		text-align: left;
+		
+		img {
+			width: 70px;
+			max-height: 70px;
+			display: block;
+		}
+		
+		p {
+			position: absolute;
+			top: 10px;
+			left: 90px;
+			margin: 0;
+			padding-right: 10px;
+			font-size: 12px;
+			
+			span {
+				font-family: $font-header;
+				font-weight: 600;
+				font-size: 14px;
+				display: block;
+				color: black;
+				text-transform: uppercase;
+				line-height: 2em;
+			}
+		}
+	}	
+}
+
+@import "../sites/components/footer";
+
+.repository {
+	
+	footer {
+		padding: 20px 0;
+	}
 }

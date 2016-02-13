@@ -29,11 +29,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 });
 
-Route::get('/', function () {
-
-    return view('repository.index');
-
-});
+Route::get('/', 'RepositoryController@index');
 
 
 /*

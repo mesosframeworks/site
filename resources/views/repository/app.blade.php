@@ -20,18 +20,44 @@
 		
     </head>
 
-    <body>
+    <body class="repository">
                 
         <div class="wrapper">
 	        
-			<img src="{!! URL::asset('static/repository/logo.svg'); !!}" alt="Mesos Frameworks logo" />
-	        
+			<header>
+				
+				<img src="{!! URL::asset('static/repository/logo.svg'); !!}" alt="Mesos Frameworks logo" />	
+			
+			</header>
+			
 	        <div class="container">
 				
 				@yield('content')
 
 	        </div>
-
+			
+			<footer>
+				
+				<div class="row">
+			
+			        <div class="columns small-12">
+			
+				        <a href="http://www.cisco.com/" target="_blank" class="with-logo">
+					        <img src="{!! URL::asset('static/repository/logo-cisco.svg') !!}">
+					        <span>Cisco Systems</span>
+				        </a>
+			
+				        <a href="http://container-solutions.com" target="_blank" class="with-logo">
+					        <img src="{!! URL::asset('static/repository/logo-container-solutions.svg') !!}">
+					        <span>Container Solutions</span>
+				        </a>
+			
+			        </div>
+			
+			    </div>
+				
+			</footer>
+			
         </div>		
         		
 		<script src="{!! URL::asset('js/repository.min.js'); !!}"></script>

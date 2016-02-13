@@ -15,7 +15,7 @@ module.exports = function(grunt) {
 				tasks: ["uglify:sites"]
 			},
 			scriptsrepository : {
-				files: ["js/*repository.js"],
+				files: ["js/repository.js"],
 				tasks: ["uglify:repository"]
 			},
 			scriptslogoGenerator : {
@@ -23,7 +23,6 @@ module.exports = function(grunt) {
 				tasks: ["uglify:logoGenerator"]
 			},
 
-			
 			stylesadmin : {
 				files: "**/*.scss",
 			    tasks: ["sass:admin"]		

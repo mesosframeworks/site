@@ -41,7 +41,7 @@
 
 						<li><a href="{{ url('/admin/site/status/'.$site->id) }}" class="public" title="@if($site->public === 0) Publish site @else Hide site @endif"><i class="material-icons">@if($site->public === 0) turned_in_not @else turned_in @endif</i></a></li>
 
-						<li><a href="http://{{ $site->site_id }}.rtp-cms.dev" class="preview" title="Preview site" target="_blank"><i class="material-icons">search</i></a></li>
+						<li><a href="http://{{ $site->site_id }}.{{ env('APP_URL_SIMPLE') }}" class="preview" title="Preview site" target="_blank"><i class="material-icons">search</i></a></li>
 
 						<li><a href="{{ url('/admin/site/delete/'.$site->id) }}" class="delete_site" title="Delete site"><i class="material-icons">delete</i></a></li>
 
