@@ -10,7 +10,11 @@
 	        
 	        @if (isset($section->embed_code) && !empty($section->embed_code))
 		        
-		        {!! $section->embed_code !!}
+		        <div class="video-wrapper">
+		        
+			        {!! $section->embed_code !!}
+	
+		        </div>
 	        
 	        @endif
         
