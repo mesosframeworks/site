@@ -96,7 +96,7 @@ class AdminController extends Controller
 		}
 		else {
 			// Delete old theme and old backup
-			unlink($site->backup);
+			//unlink($site->backup);
 		}
 		
 		// Create backup
