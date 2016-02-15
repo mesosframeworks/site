@@ -8,13 +8,13 @@
 	
 		@foreach($sites as $index => $site)
 			
-			<div class="columns large-6">
+			<div class="columns large-6 @if(count($sites) === $index + 1) end @endif">
 				
 				<a class="site" href="http://{{ $site->site_id }}.{{ env('APP_URL_SIMPLE') }}">		
 
 					<img src="{!! URL::asset('uploads/sites/'.$site->site_id.'/logo.svg') !!}">
 					
-					<p><span>{{ $site->site_id }}</span> Seamless software defined storage for Mesos</p>
+					<p><span>{{ $site->site_id }}</span> {{ $site->claim }}</p>
 					
 				</a>
 
