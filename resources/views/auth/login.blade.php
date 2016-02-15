@@ -1,15 +1,17 @@
 @extends('admin.app')
 
 @section('content')
-		
-<form class="login-form" role="form" method="POST" action="{{ url('/admin/login') }}">
 
-    {!! csrf_field() !!}
+<div id="myModal" class="reveal-modal small" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  
+  	<p class="lead">Sign in</p>
+  
+  	<form role="form" method="POST" action="{{ url('/admin/login') }}">
 
-    <div class="row {{ $errors->has('email') ? ' has-error' : '' }}">
+		{!! csrf_field() !!}
 		
-		<div class="columns small-12">
-			
+		<div class="{{ $errors->has('email') ? ' has-error' : '' }}">
+							
 			<input type="email" placeholder="E-Mail Address" name="email" value="{{ old('email') }}" aria-describedby="emailHelpText">
 			
 			@if ($errors->has('email'))
@@ -17,14 +19,10 @@
 			<p class="help-text" id="emailHelpText">{{ $errors->first('email') }}</p>
 			
 			@endif
-		
+			
 		</div>
-
-    </div>
-    
-    <div class="row {{ $errors->has('password') ? ' has-error' : '' }}">
 		
-		<div class="columns small-12">
+		<div class="{{ $errors->has('password') ? ' has-error' : '' }}">
 			
 			<input type="password" name="password" placeholder="Password" aria-describedby="passwordHelpText">
 			
@@ -33,25 +31,35 @@
 			<p class="help-text" id="passwordHelpText">{{ $errors->first('password') }}</p>
 			
 			@endif
-		
+			
 		</div>
+				
+		<button type="submit" class="small">Login</button>
+		
+	</form>
+  
+</div>
 
-    </div>
+@endsection
 
-	<!-- <input type="checkbox" name="remember"> Remember Me -->
+@section('scripts')
 
-    <div class="row">
-        
-        <div class="columns small-12">
-        
-            <button type="submit" class="small">Login</button>
-
-			<!-- <a class="btn btn-link" href="{{ url('admin/password/reset') }}">Forgot Your Password?</a> -->
-        
-        </div>
-    
-    </div>
-
-</form>
+<script>
+	
+	$(document).foundation({
+	    reveal : {
+	        close_on_esc: false,
+	        close_on_background_click: false
+	    }
+	});
+	
+	$(document).ready(function() {
+		
+		$('#myModal').foundation('reveal', 'open', {
+			closeonbackgroundclick: false
+		});
+	});
+	
+</script>
 
 @endsection

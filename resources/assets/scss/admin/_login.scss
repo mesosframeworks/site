@@ -1,21 +1,3 @@
 .full-viewport {
 	height: 100%;
 }
-
-.login-form {
-	background: $secondary-color-alpha;
-	position: relative;
-	top: 40%;
-	transform: translateY(-50%);
-	max-width: 300px;
-	margin: auto;
-	padding: 20px 0;
-	
-	@media #{$medium-up} {
-		max-width: 460px;	
-	}
-	
-	button {
-		margin-bottom: 0;
-	}
-}
