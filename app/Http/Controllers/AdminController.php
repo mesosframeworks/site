@@ -96,7 +96,7 @@ class AdminController extends Controller
 		}
 		else {
 			// Delete old theme and old backup
-			//unlink($site->backup);
+			unlink($site->backup);
 		}
 		
 		// Create backup
@@ -105,7 +105,7 @@ class AdminController extends Controller
 		
 		$backup_path = public_path().'/uploads/backups/'.$now->getTimestamp().'_'.$name;
 		
-		//copy($path, $backup_path);
+		copy($path, $backup_path);
 		
 		// Update record in database
 		$site->backup = $backup_path;
