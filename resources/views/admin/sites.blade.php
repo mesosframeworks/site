@@ -8,7 +8,7 @@
 
 		<form 
 			method="post"
-			action="admin/site"
+			action="{{ action('AdminController@addSite') }}"
 			class="dropzone"
 			id="addThemesBox"
 		>
