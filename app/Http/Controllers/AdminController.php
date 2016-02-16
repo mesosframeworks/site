@@ -95,8 +95,8 @@ class AdminController extends Controller
 			$site = new Site;
 		}
 		else {
-			// Delete old theme and old backup
-			unlink($site->backup);
+			// Delete old backup
+			if (File::exists($site->backup)) unlink($site->backup);
 		}
 		
 		// Create backup
