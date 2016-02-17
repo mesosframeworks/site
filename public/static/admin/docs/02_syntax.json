@@ -1,0 +1,15 @@
+"SECTION_ID" : {
+	"type" : "text", // This is mandatory
+	"title" : "SECTION_TITLE",
+	"text" : "SECTION_CONTENT",
+	"background" : "BACKGROUND_COLOR",
+	"color" : "white", // Or black
+	"links" : [
+		{
+			"text" : "LINK",
+			"url" : "URL_LINK",
+			"target" : "TARGET_LINK",
+			"type" : "TYPE_LINK"
+		}
+	]		
+},

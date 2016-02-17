@@ -6,23 +6,36 @@
 
 	<div class="columns small-12 medium-8 medium-offset-1">
 
-		<h1>Adding a site</h1>
+		<h1>Documentation</h1>
 		
 		<hr>
 		
-		<h2>Site structure</h2>
+		<h2>Downloads</h2>
+
+		<ul>
+			
+			<li><a href="{!! URL::asset('static/admin/docs/sample.zip') !!}" target="_blank">Sample site <small>ZIP</small></a></li>
+			<li><a href="{!! URL::asset('static/admin/docs/whereiseverything.pdf') !!}" target="_blank">Where is Everything <small>PDF</small></a></li>
+			
+		</ul>
 		
-		<p>A valid site must contain at least this two files: <code>theme.json</code> and <code>logo.svg</code> files.</p>
+		<hr>
+
+		<h2>Adding a site</h2>
 		
-		<p><a href="https://www.codecademy.com/es/courses/javascript-beginner-en-xTAfX/0/1" target="_blank">Get familiar with json</a>.</p>
+		
+		
+		<p>The site info can be added as a json object along with some other files, usually images. Before you start adding sites, make sure that you <a href="https://www.codecademy.com/es/courses/javascript-beginner-en-xTAfX/0/1" target="_blank">get familiar with json syntax</a>. A valid site must contain at least this two files: <code>theme.json</code> and <code>logo.svg</code> files.</p>
 		
 		<p><img src="{!! URL::asset('static/admin/docs/structure_01.png') !!}"></p>
 		
-		<p>The name of the parent folder is the id of the site. This id must be a alphanumeric string with no spaces. If the folder is named <em>elasticsearch</em> the zip file containing the site must be called <em>elasticsearch.zip</em>.</p>
+		<p>The name of the parent folder is the ID of the site. This ID must be a alphanumeric string with no spaces. Every site has it's own unique ID.</p>
 		
-		<p>Every site has it's own unique id. To update a site just add a package with an already existing id.</p>
+		<p>To add a site just upload a zip file with your theme.json and logo.svg files. If the folder is named <em>elasticsearch</em> the zip file containing the site must be called <em>elasticsearch.zip</em>. To update a site just add a package with an already existing ID.</p>
 		
-		<h2><code>theme.json</code></h2>
+		<hr>
+		
+		<h2>Create a theme.json file</h2>
 				
 		<p>On the first level, we define general the contents of the header and footer along with other configuration values.</p>
 		
@@ -30,70 +43,22 @@
 	
 </div>
 
-
 <div class="row">
 
 	<div class="columns small-12 medium-6">
 		
-		<pre class="syntax"><code class="language-json">{{ $content }}</code></pre>
+		<pre class="syntax"><code class="language-json">{{ $syntax01 }}</code></pre>
 
 	</div>
 	
 	<div class="columns small-12 medium-6">
 		
-<pre class="example">
-	
-<code class="language-json">
-{
-	"name" : "ElasticSearch",
-	"claim" : "Scale your favorite Analytics Engine",
-	
-	"github_link" : "https://github.com/mesos/elasticsearch",
-	
-	"ga_tracking" : "UA-XXXXX-X",
-	
-	"sections" : {
-		
-	},
-		
-	"footer_links" : [
-		{
-			"text" : "Repository",
-			"url" : "https://github.com/mesos/elasticsearch",
-			"target" : ""
-		},
-		{
-			"text" : "Contact",
-			"url" : "mailto:mesos-es@container-solutions.com",
-			"target" : "_blank"
-		}
-	],
-		
-	"footer_logos" : [
-		{
-			"logo" : "logo-cisco.svg",
-			"text" : "Cisco Systems",
-			"url" : "http://www.cisco.com/",
-			"target" : "_blank"
-		},
-		{
-			"logo" : "logo-container-solutions.svg",
-			"text" : "Container Solutions",
-			"url" : "http://container-solutions.com/",
-			"target" : "_blank"
-		}
-	],
-	
-	"copyright" : "Container Solutions"
-}	
-</code>
-</pre>		
+		<pre class="example"><code class="language-json">{{ $example01 }}</code></pre>		
 		
 	</div>
 	
 </div>
 		
-
 <div class="row">
 
 	<div class="columns small-12 medium-8 medium-offset-1">
@@ -104,7 +69,7 @@
 			
 		<h3>Sections</h3>	
 		
-		<p>We can add three types of sections: a text block, a slideshow or a list of features.</p>
+		<p>We can add four types of sections: a text block, a slideshow, a video or a list of features.</p>
 				
 		<h4>Text</h4>
 		
@@ -120,61 +85,17 @@
 
 	<div class="columns small-12 medium-6">
 		
-<pre class="syntax">
-	
-<code class="language-json">
-"SECTION_ID" : {
-	"type" : "text", // This is mandatory
-	"title" : "SECTION_TITLE",
-	"text" : "SECTION_CONTENT",
-	"background" : "BACKGROUND_COLOR",
-	"color" : "white", // Or black
-	"links" : [
-		{
-			"text" : "LINK",
-			"url" : "URL_LINK",
-			"target" : "TARGET_LINK",
-			"type" : "TYPE_LINK"
-		}
-	]		
-},
-</code>
-</pre>
+		<pre class="syntax"><code class="language-json">{{ $syntax02 }}</code></pre>
 
 	</div>
 	
 	<div class="columns small-12 medium-6">
 		
-<pre class="example">
-	
-<code class="language-json">
-"intro" : {
-	"type" : "text", 
-	"title" : "Description",
-	"text" : "&lt;p&gt;The content. You can use html here.&lt;/p&gt;",
-	"background" : "#1ab7e9",
-	"color" : "white",
-	"links" : [
-		{
-			"text" : "Features",
-			"url" : "#features",
-			"target" : "",
-			"type" : "scroll"
-		},
-		{
-			"text" : "Documentation",
-			"url" : "http://github.com/mesos",
-			"target" : "_blank"
-		}
-	]		
-},
-</code>
-</pre>		
+		<pre class="example"><code class="language-json">{{ $example02 }}</code></pre>		
 		
 	</div>
 	
 </div>
-		
 
 <div class="row">
 
@@ -182,8 +103,7 @@
 		
 		<h4>Slideshow</h4>
 		
-		
-		</div>
+	</div>
 	
 </div>
 
@@ -191,48 +111,39 @@
 
 	<div class="columns small-12 medium-6">
 		
-<pre class="syntax">
-	
-<code class="language-json">
-"SECTION_ID" : {
-	"type" : "text", // This is mandatory
-	"title" : "SECTION_TITLE",
-	"background" : "BACKGROUND_COLOR",
-	"color" : "white", // Or black
-	"slides" : [
-		{
-			"slide" : "IMAGE_ROUTE",
-			"caption" : "IMAGE_CAPTION"
-		}
-	]	
-},
-</code>
-</pre>
+		<pre class="syntax"><code class="language-json">{{ $syntax03 }}</code></pre>
 
 	</div>
 	
 	<div class="columns small-12 medium-6">
 		
-<pre class="example">
+		<pre class="example"><code class="language-json">{{ $example03 }}</code></pre>	
+	</div>
 	
-<code class="language-json">
-"infographic" : {
-	"type" : "slideshow",
-	"background" : "#FFFFFF",
-	"color" : "black",
-	"slides" : [
-		{
-			"slide" : "picture01.png",
-			"caption" : "&lt;b&gt;STEP 1.&lt;/b&gt; You can use HTML here."
-		},
-		{
-			"slide" : "pi02a.png",
-			"caption" : "&lt;b&gt;STEP 2a.&lt;/b&gt; Another caption."
-		}
-	]
-},
-</code>
-</pre>	
+</div>
+
+<div class="row">
+
+	<div class="columns small-12 medium-8 medium-offset-1">
+		
+		<h4>Video</h4>
+		
+	</div>
+	
+</div>
+
+<div class="row">
+
+	<div class="columns small-12 medium-6">
+		
+		<pre class="syntax"><code class="language-json">{{ $syntax07 }}</code></pre>
+
+	</div>
+	
+	<div class="columns small-12 medium-6">
+		
+		<pre class="example"><code class="language-json">{{ $example07 }}</code></pre>	
+
 	</div>
 </div>
 
@@ -242,7 +153,7 @@
 		
 		<h4>List</h4>
 		
-		</div>
+	</div>
 	
 </div>
 
@@ -250,37 +161,13 @@
 
 	<div class="columns small-12 medium-6">
 		
-<pre class="syntax">
-	
-<code class="language-json">
-"SECTION_ID" : {
-	"type" : "list",
-	"title" : "SECTION_TITLE",
-	"background" : "SECTION_BACKGROUND",
-	"color" : "white", // Or black
-	
-	"items" : [
-	
-		{
-			"title" : "ITEM_TITLE",
-			"content" : "ITEM_CONTENT",
-			"icon" : "ITEM_ICON"
-		}
-	]
-}
-</code>
-</pre>
+		<pre class="syntax"><code class="language-json">{{ $syntax04 }}</code></pre>
 
 	</div>
 	
 	<div class="columns small-12 medium-6">
 		
-<pre class="example">
-	
-<code class="language-json">
-
-</code>
-</pre>	
+		<pre class="example"><code class="language-json">{{ $example04 }}</code></pre>	
 
 	</div>
 </div>
@@ -295,31 +182,21 @@
 		
 		<p>This technique can be used in text and footer sections.</p>
 		
-	</div></div>
+	</div>
+	
+</div>
+
 <div class="row">
 
-<div class="columns small-12">
+	<div class="columns small-12">
 
-<pre class="example expand">
+		<pre class="example expand"><code class="language-json">{{ $example05 }}</code></pre>
 
-<code class="language-json">
+	</div>
 
-"links" : [
-	{
-		"text" : "Scroll to Features section",
-		"url" : "#features",
-		"target" : "",
-		"type" : "internal"
-	}
-]	
-
-</code>
-</pre>
-
-</div>
 </div>
 		
-	<div class="row">
+<div class="row">
 
 	<div class="columns small-12 medium-8 medium-offset-1">	
 		
@@ -341,280 +218,10 @@
 
 	<div class="columns small-12">
 		
-		<pre class="example expand">
-	
-<code class="language-json">
-"slides" : [
-	{
-		"slide" : "infographic-slider/01.png",
-		"caption" : "&lt;b&gt;STEP 1.&lt;/b&gt;Mesos cluster."
-	},
-	{
-		"slide" : "infographic-slider/02a.png",
-		"caption" : "&lt;b&gt;STEP 2a.&lt;/b&gt;ES framework scheduler."
-	},
-	{
-		"slide" : "infographic-slider/02b.png",
-		"caption" : "&lt;b&gt;STEP 2b.&lt;/b&gt;Scheduler receives."
-	},
-	{
-		"slide" : "infographic-slider/03.png",
-		"caption" : "&lt;b&gt;STEP 3.&lt;/b&gt;Once ES scheduler."
-	},
-	{
-		"slide" : "infographic-slider/04.png",
-		"caption" : "&lt;b&gt;STEP 4.&lt;/b&gt;ES nodes discovery."
-	},
-	{
-		"slide" : "infographic-slider/05.png",
-		"caption" : "&lt;b&gt;STEP 5.&lt;/b&gt;The ES nodes."
-	}
-]				
-				
-</code>
-</pre>
+		<pre class="example expand"><code class="language-json">{{ $example06 }}</code></pre>
 		
 	</div>
-</div>
-
-<div class="row">
-
-	<div class="columns small-12 medium-8 medium-offset-1">
-		
-		<h3>Example</h3>
-		
-		<p>This example belongs to the Elastic Search framework minisite. Other examples can be found by downloading the site on the <a href="{{ url('/admin/') }}">main admin page</a>.</p>
-		
-		</div>
 	
-</div>
-
-<div class="row">
-
-	<div class="columns small-12">
-		
-		<pre class="example expand">
-	
-<code class="language-json">
-{
-	"name" : "ElasticSearch",
-	"claim" : "Scale your favorite Analytics Engine",
-	
-	"github_link" : "https://github.com/mesos/elasticsearch",
-	
-	"ga_tracking" : "",
-	
-	"sections" : {
-		
-		"intro" : {
-			"type" : "text",
-			"title" : "Description",
-			"text" : "&lt;p&gt;The content. You can use html here.&lt;/p&gt;",
-			"background" : "#1ab7e9",
-			"color" : "white",
-			"links" : [
-				{
-					"text" : "Features",
-					"url" : "#features",
-					"target" : "",
-					"type" : "scroll"
-				},
-				{
-					"text" : "Documentation",
-					"url" : "http://mesos-elasticsearch.readthedocs.org/en/latest/#getting-started",
-					"target" : "_blank"
-				}
-			]		
-		},
-		
-		"infographic" : {
-			"type" : "slideshow",
-			"background" : "#FFFFFF",
-			"color" : "#000000",
-			
-			"slides" : [
-				{
-					"slide" : "infographic-slider/01.png",
-					"caption" : "Marathon and Chronos frameworks already running."
-				},
-				{
-					"slide" : "infographic-slider/02a.png",
-					"caption" : "Number (3) of slaves to be launched."
-				},
-				{
-					"slide" : "infographic-slider/02b.png",
-					"caption" : "Peceives resource offers from Mesos."
-				},
-				{
-					"slide" : "infographic-slider/03.png",
-					"caption" : "It deploys executors together with ES nodes in containers to Mesos slaves."
-				},
-				{
-					"slide" : "infographic-slider/04.png",
-					"caption" : "ES nodes registers with Zookeeper. This allows the nodes to find each other."
-				},
-				{
-					"slide" : "infographic-slider/05.png",
-					"caption" : "Each other and form a cluster."
-				}
-			]
-		},
-		
-		"features" : {
-			"type" : "list",
-			"title" : "features",
-			"background" : "",
-			"color" : "",
-			
-			"items" : [
-			
-				{
-					"title" : "Cloud",
-					"content" : "Runs on ​_any_​ hardware, cloud or on-premises (* minimum RAM requirements for ES process).",
-					"icon" : "icon-cloud.svg"
-				},
-				{
-					"title" : "Resilence",
-					"content" : "Restarts failed tasks automatically.",
-					"icon" : "icon-resilence.svg"
-				},
-				{
-					"title" : "Discovery",
-					"content" : "Discovery via Elasticsearch Zookeeper plugin.",
-					"icon" : "icon-discovery.svg"
-				},
-				{
-					"title" : "Scaling",
-					"content" : "The framework can be scaled up and down horizontally.",
-					"icon" : "icon-scaling.svg"
-				},
-				{
-					"title" : "Runtime",
-					"content" : "Run the framework as Java processes or Docker containers.",
-					"icon" : "icon-runtime.svg"
-				},
-				{
-					"title" : "User Interface",
-					"content" : "Web user interface on scheduler port 31100.",
-					"icon" : "icon-ui.svg"
-				},
-				{
-					"title" : "api",
-					"content" : "Access information of the UI via the API.",
-					"icon" : "icon-api.svg"
-				},
-				{
-					"title" : "Written in java",
-					"content" : "The framework is implemented written in Java 8.",
-					"icon" : "icon-java.svg"
-				},
-				{
-					"title" : "Configurable",
-					"content" : "Cluster settings such as dimensions, cluster name and Elasticsearch settings are configurable.",
-					"icon" : "icon-configurable.svg"
-				},
-				{
-					"title" : "Tested",
-					"content" : "The major features of the framework are tested by minimesos system tests.",
-					"icon" : "icon-tested.svg"
-				},
-				{
-					"title" : "Free",
-					"content" : "The framework is open source and free to use.",
-					"icon" : "icon-free.svg"
-				}
-			]
-		},
-		
-		"product" : {
-			"type" : "slideshow",
-			"background" : "#64d1ac",
-			"color" : "#FFFFFF",
-			
-			"slides" : [
-				{
-					"slide" : "product-slider/01.png",
-					"caption" : ""
-				},
-				{
-					"slide" : "product-slider/02.png",
-					"caption" : ""
-				},
-				{
-					"slide" : "product-slider/03.png",
-					"caption" : ""
-				}
-			]
-		},
-		
-		"download" : {
-			"type" : "text",
-			"title" : "Download",
-			"text" : "&lt;p&gt;VERSION 0.6.0 released 9.11.2015gi&lt;/p&gt;",
-			"background" : "#1ab7e9",
-			"color" : "white",
-			
-			"links" : [
-				
-				{
-					"text" : "Roadmap",
-					"url" : "http://mesos-elasticsearch.readthedocs.org/en/latest/#roadmap",
-					"target" : "_blank"
-				}
-			]		
-		}
-	},
-		
-	"footer_links" : [
-		{
-			"text" : "Introduction",
-			"url" : "http://mesos-elasticsearch.readthedocs.org/en/latest/",
-			"target" : ""
-		},
-		{
-			"text" : "Documentation",
-			"url" : "http://mesos-elasticsearch.readthedocs.org/en/latest/#getting-started",
-			"target" : ""
-		},
-		{
-			"text" : "Roadmap",
-			"url" : "http://mesos-elasticsearch.readthedocs.org/en/latest/#roadmap",
-			"target" : ""
-		},
-		{
-			"text" : "Repository",
-			"url" : "https://github.com/mesos/elasticsearch",
-			"target" : ""
-		},
-		{
-			"text" : "Contact",
-			"url" : "mailto:mesos-es@container-solutions.com",
-			"target" : "_blank"
-		}	
-	],
-		
-	"footer_logos" : [
-		{
-			"logo" : "logo-cisco.svg",
-			"text" : "Cisco Systems",
-			"url" : "http://www.cisco.com/",
-			"target" : "_blank"
-		},
-		{
-			"logo" : "logo-container-solutions.svg",
-			"text" : "Container Solutions",
-			"url" : "http://container-solutions.com/",
-			"target" : "_blank"
-		}
-	],
-	
-	"copyright" : "Container Solutions"
-}	
-</code>
-</pre>
-		
-	</div>
-
 </div>
 
 @endsection

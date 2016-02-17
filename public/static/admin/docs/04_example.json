@@ -1,0 +1,19 @@
+"features" : {
+	"type" : "list",
+	"title" : "features",
+	"background" : "#ffcc05",
+	"color" : "black",
+	
+	"items" : [
+		{
+			"title" : "Scalable",
+			"content" : "Use a REST API or a point-and-click UI to scale the ELK stack to any number of nodes.",
+			"icon" : "icon-scaling.svg"
+		},
+		{
+			"title" : "Resilient",
+			"content" : "Your data is safe. Data copies exist.",
+			"icon" : "icon-resilience.svg"
+		}
+	]
+},

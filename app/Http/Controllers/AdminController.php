@@ -158,19 +158,38 @@ class AdminController extends Controller
     
     public function docs() {
 	    
-	    $filename = public_path().'/static/admin/docs/test.json';
+	    $docs = [
+		    'syntax01' => '01_syntax.json',
+		    'example01' => '01_example.json',
+		    'syntax02' => '02_syntax.json',
+		    'example02' => '02_example.json',
+		    'syntax03' => '03_syntax.json',
+		    'example03' => '03_example.json',
+		    'syntax04' => '04_syntax.json',
+		    'example04' => '04_example.json',
+		    'example05' => '05_example.json',
+		    'example06' => '06_example.json',
+		    'syntax07' => '07_syntax.json',
+		    'example07' => '07_example.json'
+	    ];
 	    
-	    try
-		{
-		    $contents = File::get($filename);
-		}
-		catch (Illuminate\Filesystem\FileNotFoundException $exception)
-		{
-		    die("The file doesn't exist");
-		}
+	    foreach ($docs as $index => $doc) {
+		    
+		    $filename = public_path().'/static/admin/docs/'.$doc;
+		    
+		    try
+			{
+			    $contents = File::get($filename);
+			}
+			catch (Illuminate\Filesystem\FileNotFoundException $exception)
+			{
+			    die("The file doesn't exist");
+			}
+			
+			$data[$index] = $contents;
+	    }
 	    
 	    $data['section_id'] = 'docs';
-	    $data['content'] = $contents;
 	    
 	    return view('admin.docs', $data);
     }

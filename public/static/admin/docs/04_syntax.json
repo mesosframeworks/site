@@ -1,0 +1,15 @@
+"SECTION_ID" : {
+	"type" : "list",
+	"title" : "SECTION_TITLE",
+	"background" : "SECTION_BACKGROUND",
+	"color" : "white", // Or black
+	
+	"items" : [
+	
+		{
+			"title" : "ITEM_TITLE",
+			"content" : "ITEM_CONTENT",
+			"icon" : "ITEM_ICON"
+		}
+	]
+}

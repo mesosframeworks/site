@@ -1,0 +1,26 @@
+"slides" : [
+	{
+		"slide" : "infographic-slider/01.png",
+		"caption" : "&lt;b&gt;STEP 1.&lt;/b&gt;Mesos cluster."
+	},
+	{
+		"slide" : "infographic-slider/02a.png",
+		"caption" : "&lt;b&gt;STEP 2a.&lt;/b&gt;ES framework scheduler."
+	},
+	{
+		"slide" : "infographic-slider/02b.png",
+		"caption" : "&lt;b&gt;STEP 2b.&lt;/b&gt;Scheduler receives."
+	},
+	{
+		"slide" : "infographic-slider/03.png",
+		"caption" : "&lt;b&gt;STEP 3.&lt;/b&gt;Once ES scheduler."
+	},
+	{
+		"slide" : "infographic-slider/04.png",
+		"caption" : "&lt;b&gt;STEP 4.&lt;/b&gt;ES nodes discovery."
+	},
+	{
+		"slide" : "infographic-slider/05.png",
+		"caption" : "&lt;b&gt;STEP 5.&lt;/b&gt;The ES nodes."
+	}
+]

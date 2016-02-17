@@ -1,0 +1,42 @@
+{
+	"name" : "ElasticSearch",
+	"claim" : "Scale your favorite Analytics Engine",
+	
+	"github_link" : "https://github.com/mesos/elasticsearch",
+	
+	"ga_tracking" : "UA-XXXXX-X",
+	
+	"sections" : {
+		
+	},
+		
+	"footer_links" : [
+		{
+			"text" : "Repository",
+			"url" : "https://github.com/mesos/elasticsearch",
+			"target" : ""
+		},
+		{
+			"text" : "Contact",
+			"url" : "mailto:mesos-es@container-solutions.com",
+			"target" : "_blank"
+		}
+	],
+		
+	"footer_logos" : [
+		{
+			"logo" : "logo-cisco.svg",
+			"text" : "Cisco Systems",
+			"url" : "http://www.cisco.com/",
+			"target" : "_blank"
+		},
+		{
+			"logo" : "logo-container-solutions.svg",
+			"text" : "Container Solutions",
+			"url" : "http://container-solutions.com/",
+			"target" : "_blank"
+		}
+	],
+	
+	"copyright" : "Container Solutions"
+}

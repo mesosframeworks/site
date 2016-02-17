@@ -1,0 +1,12 @@
+"SECTION_ID" : {
+	"type" : "text", // This is mandatory
+	"title" : "SECTION_TITLE",
+	"background" : "BACKGROUND_COLOR",
+	"color" : "white", // Or black
+	"slides" : [
+		{
+			"slide" : "IMAGE_ROUTE",
+			"caption" : "IMAGE_CAPTION"
+		}
+	]	
+},

@@ -1,0 +1,20 @@
+"intro" : {
+	"type" : "text", 
+	"title" : "Description",
+	"text" : "&lt;p&gt;The content. You can use html here.&lt;/p&gt;",
+	"background" : "#1ab7e9",
+	"color" : "white",
+	"links" : [
+		{
+			"text" : "Features",
+			"url" : "#features",
+			"target" : "",
+			"type" : "scroll"
+		},
+		{
+			"text" : "Documentation",
+			"url" : "http://github.com/mesos",
+			"target" : "_blank"
+		}
+	]		
+},

@@ -1,0 +1,106 @@
+{
+	"name" : "Site name",
+	"claim" : "Site claim",
+	
+	"github_link" : "https://github.com",
+	
+	"ga_tracking" : "",
+	
+	"sections" : {
+		
+		"intro" : {
+			"type" : "text",
+			"title" : "Text section",
+			"text" : "<p>You can use HTML here</p>",
+			"background" : "#1ab7e9",
+			"color" : "white",
+			"links" : [
+				{
+					"text" : "Link to list",
+					"url" : "#features",
+					"target" : "",
+					"type" : "scroll"
+				},
+				{
+					"text" : "Link",
+					"url" : "http://documentation.com",
+					"target" : "_blank"
+				}
+			]		
+		},
+		
+		"infographic" : {
+			"type" : "slideshow",
+			"background" : "#FFFFFF",
+			"color" : "black",
+			
+			"slides" : [
+				{
+					"slide" : "infographic-slider/01.png",
+					"caption" : "The caption."
+				},
+				{
+					"slide" : "infographic-slider/02a.png",
+					"caption" : "You can use <b>html</b> here."
+				}
+			]
+		},
+		
+		"features" : {
+			"type" : "list",
+			"title" : "features",
+			"background" : "#ffcc05",
+			"color" : "black",
+			
+			"items" : [
+			
+				{
+					"title" : "Tested",
+					"content" : "One item.",
+					"icon" : "icon-tested.svg"
+				},
+				{
+					"title" : "Free",
+					"content" : "Othe item with long description. Lorem ipsum dolor sit amet.",
+					"icon" : "icon-free.svg"
+				}
+			]
+		},
+		
+		"screencast" : {
+			"type" : "video",
+			"embed_code" : "<iframe width='560' height='315' src='https://www.youtube.com/embed/LKOGAQEuJcI' frameborder='0' allowfullscreen></iframe>",
+			"background" : "#fcfcfc"		
+		}
+	},
+		
+	"footer_links" : [
+		{
+			"text" : "Link 1",
+			"url" : "http://link1.com",
+			"target" : ""
+		},
+		{
+			"text" : "Link 2",
+			"url" : "http://link2.com",
+			"target" : ""
+		}	
+	],
+		
+	"footer_logos" : [
+		{
+			"logo" : "logo-cisco.svg",
+			"text" : "Cisco Systems",
+			"url" : "http://www.cisco.com/",
+			"target" : "_blank"
+		},
+		{
+			"logo" : "logo-container-solutions.svg",
+			"text" : "Container Solutions",
+			"url" : "http://container-solutions.com/",
+			"target" : "_blank"
+		}
+	],
+	
+	"copyright" : "Container Solutions"
+}	

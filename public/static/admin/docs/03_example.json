@@ -1,0 +1,15 @@
+"infographic" : {
+	"type" : "slideshow",
+	"background" : "#FFFFFF",
+	"color" : "black",
+	"slides" : [
+		{
+			"slide" : "picture01.png",
+			"caption" : "&lt;b&gt;STEP 1.&lt;/b&gt; You can use HTML here."
+		},
+		{
+			"slide" : "pi02a.png",
+			"caption" : "&lt;b&gt;STEP 2a.&lt;/b&gt; Another caption."
+		}
+	]
+},
