@@ -1,10 +1,13 @@
 <?php
 	
+Route::group(array('domain' => 'logogenerator.'.env('APP_URL_SIMPLE')), function() {	
+	
+	Route::get('/', 'LogoGenController@index');
+});
+	
 Route::group(array('domain' => '{name}.'.env('APP_URL_SIMPLE')), function() {
     
     Route::get('/', function($name) {	 
-	    
-	    if ($name === 'logogenerator') return view('logogenerator.app');
 	    
 	    $model = App\Site::where('site_id', '=', $name)->firstOrFail();
 	    

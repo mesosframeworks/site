@@ -135,7 +135,9 @@ return [
     |
     */
 
-    'domain' => null,
+    //'domain' => null,
+    //dd('.'.env('APP_URL_SIMPLE')),
+    'domain' => '.'.env('APP_URL_SIMPLE'),
 
     /*
     |--------------------------------------------------------------------------

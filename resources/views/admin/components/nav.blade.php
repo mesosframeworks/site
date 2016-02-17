@@ -20,9 +20,9 @@
 
 			<li @if( isset($section_id) && $section_id === 'sites') class="active" @endif><a href="{{ url('admin') }}">Sites</a></li>
 
-			<li><a href="http://logogenerator.{{ env('APP_URL_SIMPLE') }}">Logo Generator</a></li>
+			<li><a href="http://logogenerator.{{ env('APP_URL_SIMPLE') }}" target="_blank">Logo Generator</a></li>
 
-			<li @if( isset($section_id) && $section_id === 'docs') class="active" @endif><a href="{{ url('admin/docs') }}">Docs</a></li>
+			<li style="display: none" @if( isset($section_id) && $section_id === 'docs') class="active" @endif><a href="{{ url('admin/docs') }}">Docs</a></li>
 			
 			<li><a href="{{ url('admin/logout') }}">Logout</a></li>
 

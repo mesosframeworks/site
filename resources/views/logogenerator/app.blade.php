@@ -36,7 +36,7 @@
 					<input type="text" id="name" placeholder="Type in the framework name"/>
 
 				</form>
-
+				
 				<div id="buttons">
 
 					<ul class="button-group">
@@ -47,7 +47,7 @@
 
 						<li><span class="save icon"></span><button href="#" id="download" class="button tiny secondary">Save logo design</button></li>
 
-						@endif;
+						@endif
 
 					</ul>
 
