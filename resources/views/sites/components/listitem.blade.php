@@ -12,7 +12,7 @@
 	
 	        <div class="columns small-9 medium-8 end">
 	
-		        <h3 class="heading decoration line-below">{{ $item->title or '' }}</h3>
+		        <h3 class="heading decoration line-below {{ $color or 'black' }}">{{ $item->title or '' }}</h3>
 	
 		        <p>{{ $item->content or '' }}</p>
 	

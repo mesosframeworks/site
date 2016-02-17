@@ -31,3 +31,9 @@
 		font-size: 22px;		
 	}
 }
+
+
+@mixin rtp-button-black {
+	border: 3px solid black;
+	color: black;
+}

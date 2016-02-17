@@ -1,13 +1,31 @@
 .text {
 	background: $orange;
-	color: white;
+	
+	&.white {
+		color: white;
+		
+		a {
+			color: white;
+		}
+	}
+	
+	&.black {
+		color: black;
+		
+		a {
+			color: black;
+			
+			&.btn {
+				@include rtp-button-black();
+			}
+		}
+	}
 	
 	h2 {
 		margin-bottom: 40px;
 	}
 	
 	p a {
-		color: white;
 		text-decoration: none;
 		font-style: italic;
 	}

@@ -84,7 +84,7 @@ footer {
 			}		
 		}
 		
-		&.black-peaks {
+		&.black {
 			
 			&:after {
 				background: url(#{$imgs-path}icons/heading-underline-black.svg) no-repeat center bottom;
@@ -111,6 +111,24 @@ footer {
 	}
 	
 	&.black {
-		color: black;		
+		color: black;	
+		
+		&.line-below {
+			
+			&:after {
+				background: black;
+			}	
+		}	
+	}
+	
+	&.white {
+		color: white;	
+		
+		&.line-below {
+			
+			&:after {
+				background: white;
+			}	
+		}	
 	}
 }

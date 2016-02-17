@@ -2,8 +2,23 @@
 	background: $yellow;
 	text-align: left;
 	
+	&.white {
+		color: white;
+		
+		.inner {
+			border-top: 3px solid white;
+		}
+	}
+	
+	&.black {
+		color: black;
+		
+		.inner {
+			border-top: 3px solid black;
+		}
+	}
+	
 	.inner {
-		border-top: 3px solid white;
 		padding-top: 1.5em;
 		
 		@media #{$large-up} {
