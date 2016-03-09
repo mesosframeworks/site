@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use File;
 
 use App\Site;
+use App\User;
 use DateTime;
 
 class AdminController extends Controller
@@ -61,11 +62,13 @@ class AdminController extends Controller
 		// Check if json file exists and is valid
 		
 		$theme_path = public_path().'/uploads/sites/'.$id.'/theme.json';
+				
+		//json_decode($theme_path);
 		
-		json_decode($theme_path);
+		$contents = json_decode(file_get_contents($theme_path), true);
 		
-		if (!File::exists($theme_path) || json_last_error() != 4) {
-			dd('No valid json file!');
+		if (!File::exists($theme_path) || json_last_error() != JSON_ERROR_NONE) {
+			dd('No valid json file! Error: '.json_last_error());
 		}
 				
 		// Check if logo exists and is valid
@@ -73,9 +76,7 @@ class AdminController extends Controller
 		if (!File::exists(public_path().'/uploads/sites/'.$id.'/logo.svg')) {
 			dd('No valid logo file!');
 		}
-		
-		$contents = json_decode(file_get_contents($theme_path), true);
-		
+						
 		foreach ($contents as $index => $value) {
 			if($index === 'claim') {
 				$claim = $value;
@@ -193,4 +194,24 @@ class AdminController extends Controller
 	    
 	    return view('admin.docs', $data);
     }
+    
+    public function users() {
+	    
+	    $data['section_id'] = 'users';
+		
+		$data['users'] = User::all();
+		
+		return view('admin.users', $data);
+	    
+    }
+    
+    public function addUser(CreateOrEditUserRequest $request) {
+	    
+	    $request->merge(['password' => Hash::make($request->password)]);
+        
+        $user = User::create($request->all());
+
+        return redirect('/admin/user');
+    }
+    
 }

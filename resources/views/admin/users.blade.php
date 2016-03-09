@@ -46,7 +46,7 @@
 
 	<div class="columns small-12 medium-8 medium-offset-1">
 
-		@if(isset($users) && count($users) >= 1) 
+		@if(count($users) >= 1) 
 		
 			@foreach($users as $index => $user)
 			
@@ -102,7 +102,7 @@
 	
 	<div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
 		
-		<form method="POST" action="{{ url('/admin/register') }}">
+		<form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/register') }}">
             
             {!! csrf_field() !!}
 			
