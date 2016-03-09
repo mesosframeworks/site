@@ -11,4 +11,6 @@
     
     @endif
     
+    <a class="repository show-for-medium-up" href="{{ env('APP_URL') }}">Repository Index</a>
+    
 </header>

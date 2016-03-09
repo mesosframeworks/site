@@ -53,4 +53,25 @@ header {
 			height: 80px;		
 		}
 	}
+	
+	.repository {
+		position: absolute;
+		top: 35px;
+		left: 45px;
+		text-indent: -9999px;
+		
+		@media #{$medium-up} {
+			width: 70px;
+			height: 81px;
+			background: url(#{$imgs-path}logos/header-repository-mediumup.svg) center center no-repeat;		
+			background-size: cover;	
+		}
+		
+		@media #{$large-up} {
+			width: 253px;
+			height: 70px;
+			background: url(#{$imgs-path}logos/header-repository-largeup.svg) center center no-repeat;		
+			background-size: cover;	
+		}
+	}
 }
