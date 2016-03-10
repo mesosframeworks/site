@@ -3,36 +3,56 @@
 @section('content')
 
 <div id="myModal" class="reveal-modal small" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-  
-  	<p class="lead">Sign in</p>
-  
+    
   	<form role="form" method="POST" action="{{ url('/admin/login') }}">
 
 		{!! csrf_field() !!}
 		
-		<div class="{{ $errors->has('email') ? ' has-error' : '' }}">
-							
-			<input type="email" placeholder="E-Mail Address" name="email" value="{{ old('email') }}" aria-describedby="emailHelpText">
+		<fieldset>
 			
-			@if ($errors->has('email'))
+			<legend>Sign in</legend>
 			
-			<p class="help-text" id="emailHelpText">{{ $errors->first('email') }}</p>
+			<div class="row">
+					
+				<div class="columns small-12">
+				
+					<label class="{{ $errors->has('email') ? ' error' : '' }}">
+        
+						<input type="email" name="email" class="{{ $errors->has('email') ? ' error' : '' }}" placeholder="Email Address *" value="{{ old('email') }}">
+					
+					</label>
+					
+					@if ($errors->has('email'))
+	                
+	                    <small class="{{ $errors->has('email') ? ' error' : '' }}">{{ $errors->first('email') }}</small> 
+	                    
+	                @endif
+					
+				</div>
+				
+			</div>
 			
-			@endif
+			<div class="row">
+				
+				<div class="columns small-12">
+				
+					<label class="{{ $errors->has('password') ? ' error' : '' }}">
+        
+						<input type="password" name="password" class="{{ $errors->has('password') ? ' error' : '' }}" placeholder="Password *" />
+					
+					</label>
+					
+					@if ($errors->has('password'))
+	                
+	                    <small class="{{ $errors->has('password') ? ' error' : '' }}">{{ $errors->first('password') }}</small> 
+	                    
+	                @endif
+					
+				</div>
+				
+			</div>
 			
-		</div>
-		
-		<div class="{{ $errors->has('password') ? ' has-error' : '' }}">
-			
-			<input type="password" name="password" placeholder="Password" aria-describedby="passwordHelpText">
-			
-			@if ($errors->has('password'))
-			
-			<p class="help-text" id="passwordHelpText">{{ $errors->first('password') }}</p>
-			
-			@endif
-			
-		</div>
+		</fieldset>
 				
 		<button type="submit" class="small">Login</button>
 		

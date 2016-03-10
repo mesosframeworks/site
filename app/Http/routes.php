@@ -24,7 +24,11 @@ Route::group(['prefix' => 'admin'], function () {
     Route::auth();
     
     Route::get('/', 'AdminController@index');
+    Route::get('/user', 'AdminController@users');
+    Route::post('/user', 'AdminController@addUser');
     Route::post('/site', 'AdminController@addSite');
+    Route::get('/user', 'AdminController@user');
+    Route::post('/user', 'AdminController@addUser');
 	Route::get('/site/delete/{id}', 'AdminController@deleteSite');
 	Route::get('/site/status/{id}', 'AdminController@publishSite');
 
@@ -33,18 +37,3 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 Route::get('/', 'RepositoryController@index');
-
-
-/*
-Route::group(['middleware' => 'web'], function () {
-
-    Route::get('/home', 'HomeController@index');
-
-});
-
-Route::group(['middleware' => 'web'], function () {
-    Route::auth();
-
-    Route::get('/home', 'HomeController@index');
-});
-*/

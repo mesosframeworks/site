@@ -19,6 +19,8 @@
 		<ul class="right">
 
 			<li @if( isset($section_id) && $section_id === 'sites') class="active" @endif><a href="{{ url('admin') }}">Sites</a></li>
+			
+			<li @if( isset($section_id) && $section_id === 'users') class="active" @endif><a href="{{ url('admin/user') }}">Users</a></li>
 
 			<li><a href="http://logogenerator.{{ env('APP_URL_SIMPLE') }}" target="_blank">Logo Generator</a></li>
 

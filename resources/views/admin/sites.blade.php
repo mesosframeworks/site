@@ -29,7 +29,7 @@
 		
 		<div class="columns small-6 medium-4 {{ $site->site_id }} @if(count($sites) === $index + 1) end @endif">
 
-			<div class="site-thumb">
+			<div class="thumb site-thumb">
 
 				<img src="uploads/sites/{{ $site->site_id }}/logo.svg">
 
