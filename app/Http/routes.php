@@ -27,7 +27,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/user', 'AdminController@users');
     Route::post('/user', 'AdminController@addUser');
     Route::post('/site', 'AdminController@addSite');
-    Route::get('/site/user', 'AdminController@addUser');
+    Route::get('/user', 'AdminController@user');
+    Route::post('/user', 'AdminController@addUser');
 	Route::get('/site/delete/{id}', 'AdminController@deleteSite');
 	Route::get('/site/status/{id}', 'AdminController@publishSite');
 

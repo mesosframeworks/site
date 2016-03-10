@@ -195,7 +195,7 @@ class AdminController extends Controller
 	    return view('admin.docs', $data);
     }
     
-    public function users() {
+    public function user() {
 	    
 	    $data['section_id'] = 'users';
 		
@@ -211,7 +211,7 @@ class AdminController extends Controller
         
         $user = User::create($request->all());
 
-        return redirect('/admin/user');
+        return redirect('/admin/users');
     }
     
 }

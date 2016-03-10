@@ -116,7 +116,7 @@
 					
 						<label class="{{ $errors->has('name') ? ' error' : '' }}">
 	        
-							<input type="text" name="name" class="{{ $errors->has('name') ? ' error' : '' }}" placeholder="Name *" />
+							<input type="text" name="name" class="{{ $errors->has('name') ? ' error' : '' }}" placeholder="Name *" value="{{ old('name') }}">
 						
 						</label>
 						
@@ -136,13 +136,13 @@
 					
 						<label class="{{ $errors->has('email') ? ' error' : '' }}">
 	        
-							<input type="email" name="email" class="{{ $errors->has('email') ? ' error' : '' }}" placeholder="Email Address *" />
+							<input type="email" name="email" class="{{ $errors->has('email') ? ' error' : '' }}" placeholder="Email Address *" value="{{ old('email') }}">
 						
 						</label>
 						
-						@if ($errors->has('name'))
+						@if ($errors->has('email'))
 		                
-		                    <small class="{{ $errors->has('email') ? ' error' : '' }}">{{ $errors->first('name') }}</small> 
+		                    <small class="{{ $errors->has('email') ? ' error' : '' }}">{{ $errors->first('email') }}</small> 
 		                    
 		                @endif
 						
@@ -160,9 +160,9 @@
 						
 						</label>
 						
-						@if ($errors->has('name'))
+						@if ($errors->has('password'))
 		                
-		                    <small class="{{ $errors->has('password') ? ' error' : '' }}">{{ $errors->first('name') }}</small> 
+		                    <small class="{{ $errors->has('password') ? ' error' : '' }}">{{ $errors->first('password') }}</small> 
 		                    
 		                @endif
 						
@@ -176,7 +176,7 @@
 						
 						</label>
 						
-						@if ($errors->has('name'))
+						@if ($errors->has('password_confirmation'))
 		                
 		                    <small class="{{ $errors->has('password_confirmation') ? ' error' : '' }}">{{ $errors->first('password_confirmation') }}</small> 
 		                    

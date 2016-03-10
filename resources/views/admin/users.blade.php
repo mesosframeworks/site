@@ -2,64 +2,23 @@
 
 @section('content')
 
-<!--
-<div id="myModal" class="reveal-modal small" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-  
-  	<p class="lead">Sign in</p>
-  
-  	<form role="form" method="POST" action="{{ url('/admin/login') }}">
+<div class="row" id="user-list">
 
-		{!! csrf_field() !!}
-		
-		<div class="{{ $errors->has('email') ? ' has-error' : '' }}">
-							
-			<input type="email" placeholder="E-Mail Address" name="email" value="{{ old('email') }}" aria-describedby="emailHelpText">
-			
-			@if ($errors->has('email'))
-			
-			<p class="help-text" id="emailHelpText">{{ $errors->first('email') }}</p>
-			
-			@endif
-			
-		</div>
-		
-		<div class="{{ $errors->has('password') ? ' has-error' : '' }}">
-			
-			<input type="password" name="password" placeholder="Password" aria-describedby="passwordHelpText">
-			
-			@if ($errors->has('password'))
-			
-			<p class="help-text" id="passwordHelpText">{{ $errors->first('password') }}</p>
-			
-			@endif
-			
-		</div>
-				
-		<button type="submit" class="small">Login</button>
-		
-	</form>
-  
-</div>
--->
-
-<div class="row">
-
-	<div class="columns small-12 medium-8 medium-offset-1">
+	<div class="columns small-12 large-8 large-offset-2">
 
 		@if(count($users) >= 1) 
 		
 			@foreach($users as $index => $user)
 			
-			<div class="columns small-6 medium-4 @if(count($users) === $index + 1) end @endif">
+			<div class="columns small-6 medium-4">
 	
 				<div class="thumb user-thumb">
 					
 					<?php 
 						$email = $user->email;
-						$default = "http://www.somewhere.com/homestar.jpg";
 						$size = 500;
 						
-						$grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
+						$grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?s=" . $size;
 					?>
 					
 					<img src="<?php echo $grav_url; ?>">
@@ -87,22 +46,26 @@
 		</div>
 		
 		@endif
+		
+		<div class="columns small-6 medium-4 end">
+			
+			<div class="thumb user-thumb">
 				
-	</div>
-	
-	<div class="row">
+				<button data-reveal-id="myModal">
+				
+					<img src="{!! URL::asset('static/admin/add-button.png') !!}">
+			
+				</button>
+			
+			</div>
 		
-		<div class="columns small-12 medium-8 medium-offset-1">
-			
-			<button data-reveal-id="myModal">Add user</button>
-			
 		</div>
-		
+				
 	</div>
 	
 	<div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
 		
-		<form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/register') }}">
+		<form method="POST" action="{{ url('/admin/register') }}">
             
             {!! csrf_field() !!}
 			
@@ -116,7 +79,7 @@
 					
 						<label class="{{ $errors->has('name') ? ' error' : '' }}">
 	        
-							<input type="text" name="name" class="{{ $errors->has('name') ? ' error' : '' }}" placeholder="Name *" />
+							<input type="text" name="name" class="{{ $errors->has('name') ? ' error' : '' }}" placeholder="Name *" value="{{ old('name') }}">
 						
 						</label>
 						
@@ -136,13 +99,13 @@
 					
 						<label class="{{ $errors->has('email') ? ' error' : '' }}">
 	        
-							<input type="email" name="email" class="{{ $errors->has('email') ? ' error' : '' }}" placeholder="Email Address *" />
+							<input type="email" name="email" class="{{ $errors->has('email') ? ' error' : '' }}" placeholder="Email Address *" value="{{ old('email') }}">
 						
 						</label>
 						
-						@if ($errors->has('name'))
+						@if ($errors->has('email'))
 		                
-		                    <small class="{{ $errors->has('email') ? ' error' : '' }}">{{ $errors->first('name') }}</small> 
+		                    <small class="{{ $errors->has('email') ? ' error' : '' }}">{{ $errors->first('email') }}</small> 
 		                    
 		                @endif
 						
@@ -160,9 +123,9 @@
 						
 						</label>
 						
-						@if ($errors->has('name'))
+						@if ($errors->has('password'))
 		                
-		                    <small class="{{ $errors->has('password') ? ' error' : '' }}">{{ $errors->first('name') }}</small> 
+		                    <small class="{{ $errors->has('password') ? ' error' : '' }}">{{ $errors->first('password') }}</small> 
 		                    
 		                @endif
 						
@@ -176,7 +139,7 @@
 						
 						</label>
 						
-						@if ($errors->has('name'))
+						@if ($errors->has('password_confirmation'))
 		                
 		                    <small class="{{ $errors->has('password_confirmation') ? ' error' : '' }}">{{ $errors->first('password_confirmation') }}</small> 
 		                    
@@ -191,7 +154,7 @@
 			<button type="submit">Submit</button>
 			
 		</form>
-			
+					
 		<a class="close-reveal-modal" aria-label="Close">&#215;</a>
 	
 	</div>
@@ -209,13 +172,6 @@
 	        close_on_esc: false,
 	        close_on_background_click: false
 	    }
-	});
-	
-	$(document).ready(function() {
-		
-		$('#myModal').foundation('reveal', 'open', {
-			closeonbackgroundclick: false
-		});
 	});
 	
 </script>
