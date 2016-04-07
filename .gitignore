@@ -20,3 +20,4 @@ public/js/*.min.js
 resources/views/sites/themes
 public/uploads/
 public/dummies/
+.vagrant
