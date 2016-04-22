@@ -1,7 +1,7 @@
 <footer>
 		        
     @if (isset($theme->footer_links) && !empty($theme->footer_links))
-    <h3 class="heading decoration peaks-below">Index</h3>
+    <h3 class="heading decoration peaks-below white">Index</h3>
     <div class="row">
         <div class="columns small-12">
 	        <ul>
