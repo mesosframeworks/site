@@ -1,6 +1,6 @@
 var getHeaderMinHeight = function () {
 	
-	$("header").css("minHeight", $(window).height());
+	$("#start").css("minHeight", $(window).height());
 };
 
 $(function(){

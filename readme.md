@@ -1,4 +1,4 @@
-## Mesos Frameworks
+# Mesos Frameworks
 
 ## Run staging site (OSX)
 
@@ -15,4 +15,4 @@ Install dnsmasq: http://www.thekelleys.org.uk/dnsmasq/doc.html
 Configure dnsmasq
 
 - Edit `/usr/local/etc/dnsmasq.conf` file. 
-- Change `address=/double-click.net/127.0.0.1` line with `address=/mesosframeworks.dev/52.19.6.89`.
+- Change `address=/double-click.net/127.0.0.1` line with `address=/mesosframeworks.dev/52.31.48.78`.
